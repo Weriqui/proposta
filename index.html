@@ -1,2649 +1,1043 @@
 <!DOCTYPE html>
-
-
 <html lang="pt-BR">
-
-
 <head>
-
-
     <meta charset="UTF-8">
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
     <title>Bezerra e Pacheco - Proposta de Site Profissional</title>
-
-
-    
-
-
-    <!-- Favicon -->
-
-
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>âš–ï¸</text></svg>">
-
-
-    
-
-
-    <!-- Tailwind CSS Browser v4 -->
-
-
+    <link rel="icon" href="logo.svg">
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-
-    
-
-
-    <!-- Fontes Google -->
-
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap" rel="stylesheet">
     
-
-
     <style>
-
-
         :root {
-
-
-            --font-display: 'Cormorant Garamond', 'Times New Roman', serif;
-
-
+            --font-display: 'Playfair', 'Lora', serif;
             --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
-
-
             --color-navy-900: #020618;
-
-
             --color-navy-800: #071431;
-
-
             --color-navy-700: #0f2147;
-
-
             --color-gold-500: #c9a24f;
-
-
             --color-gold-400: #d7bb6a;
-
-
             --color-gold-300: #e6cf8f;
-
-
             --color-text-primary: #f8fafc;
-
-
             --color-text-secondary: #cbd5e1;
-
-
             --color-text-muted: #94a3b8;
-
-
-            --line-height-relaxed: 1.75;
-
-
-            --line-height-tight: 1.2;
-
-
-            --letter-spacing-heading: 0.045em;
-
-
-            --letter-spacing-tagline: 0.32em;
-
-
         }
 
-
-
-
-
-        html {
-
-
-            scroll-behavior: smooth;
-
-
-        }
-
-
-
-
+        html { scroll-behavior: smooth; }
 
         body {
-
-
             font-family: var(--font-body);
-
-
             font-size: 1rem;
-
-
-            line-height: var(--line-height-relaxed);
-
-
+            line-height: 1.75;
             letter-spacing: 0.01em;
-
-
             color: var(--color-text-primary);
-
-
             background-color: var(--color-navy-900);
-
-
         }
-
-
-
-
 
         h1, h2, h3, h4, .font-display {
-
-
             font-family: var(--font-display);
-
-
-            letter-spacing: var(--letter-spacing-heading);
-
-
+            letter-spacing: 0.025em;
             color: var(--color-text-primary);
-
-
             font-weight: 600;
-
-
         }
 
-
-
-
-
-        .heading-xxl {
-
-
-            font-size: clamp(2.75rem, 5vw, 3.9rem);
-
-
-            line-height: 1.08;
-
-
-        }
-
-
-
-
-
-        .heading-xl {
-
-
-            font-size: clamp(2.1rem, 4vw, 3.2rem);
-
-
-            line-height: 1.12;
-
-
-        }
-
-
-
-
-
-        .heading-lg {
-
-
-            font-size: clamp(1.6rem, 3vw, 2.4rem);
-
-
-            line-height: 1.18;
-
-
-        }
-
-
-
-
-
-        .heading-md {
-
-
-            font-size: clamp(1.35rem, 2.4vw, 1.75rem);
-
-
-            line-height: 1.3;
-
-
+        .heading-xxl { 
+            font-size: clamp(2.75rem, 5vw, 3.9rem); 
+            line-height: 1.12; 
+            letter-spacing: -0.01em;
             font-weight: 500;
-
-
         }
-
-
-
-
-
-        .heading-sm {
-
-
-            font-size: 1.125rem;
-
-
-            line-height: 1.35;
-
-
-            font-weight: 500;
-
-
-            letter-spacing: 0.02em;
-
-
-        }
-
-
-
-
-
-        .price-figure {
-
-            font-family: var(--font-body);
-
-            font-size: clamp(2.6rem, 4.5vw, 3.6rem);
-
-            line-height: 1.05;
-
-            font-weight: 700;
-
-            font-variant-numeric: tabular-nums lining-nums;
-
-            letter-spacing: 0.015em;
-
-            color: var(--color-gold-300);
-
-        }
-
-
-
-
-
-        .price-caption {
-
-
-            font-size: 0.875rem;
-
-
-            letter-spacing: 0.08em;
-
-
-            text-transform: uppercase;
-
-
-            color: var(--color-text-muted);
-
-
-            font-family: var(--font-body);
-
-
-        }
-
-
-
-
+        .heading-xl { font-size: clamp(2.1rem, 4vw, 3.2rem); line-height: 1.12; }
+        .heading-lg { font-size: clamp(1.6rem, 3vw, 2.4rem); line-height: 1.18; }
+        .heading-md { font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1.3; font-weight: 500; }
+        .heading-sm { font-size: 1.125rem; line-height: 1.35; font-weight: 500; letter-spacing: 0.02em; }
 
         .body-large {
-
-
             font-size: 1.125rem;
-
-
-            line-height: 1.8;
-
-
+            line-height: 1.7;
             letter-spacing: 0.01em;
-
-
-            font-family: var(--font-body);
-
-
+            font-weight: 400;
         }
 
-
-
-
-
-        .body-regular {
-
-
-            font-size: 1rem;
-
-
-            line-height: 1.75;
-
-
+        .price-figure {
             font-family: var(--font-body);
-
-
-        }
-
-
-
-
-
-        .body-small {
-
-
-            font-size: 0.9375rem;
-
-
-            line-height: 1.6;
-
-
+            font-size: clamp(2.25rem, 3.8vw, 3rem);
+            line-height: 1.05;
+            font-weight: 700;
+            font-variant-numeric: tabular-nums lining-nums;
             letter-spacing: 0.01em;
-
-
-            font-family: var(--font-body);
-
-
+            color: var(--color-text-primary);
         }
-
-
-
-
 
         .eyebrow {
-
-
             font-family: var(--font-display);
-
-
             text-transform: uppercase;
-
-
-            letter-spacing: var(--letter-spacing-tagline);
-
-
-            font-size: 0.85rem;
-
-
-            color: var(--color-gold-400);
-
-
+            letter-spacing: 0.38em;
+            font-size: 0.82rem;
+            color: #E8DCC0;
         }
-
-
-
-
-
-        .text-muted {
-
-
-            color: var(--color-text-muted);
-
-
-        }
-
-
-
-
-
-        .text-secondary {
-
-
-            color: var(--color-text-secondary);
-
-
-        }
-
-
-
-
-
-        .uppercase-spacing {
-
-
-            text-transform: uppercase;
-
-
-            letter-spacing: 0.18em;
-
-
-            font-weight: 500;
-
-
-            font-family: var(--font-display);
-
-
-        }
-
-
-
-
 
         .glass {
-
-
             background: rgba(12, 18, 38, 0.45);
-
-
             backdrop-filter: blur(12px);
-
-
-            -webkit-backdrop-filter: blur(12px);
-
-
             border: 1px solid rgba(255, 255, 255, 0.08);
-
-
         }
-
-
-
-
 
         .glass-dark {
-
-
             background: rgba(4, 8, 20, 0.55);
-
-
             backdrop-filter: blur(14px);
-
-
-            -webkit-backdrop-filter: blur(14px);
-
-
             border: 1px solid rgba(255, 255, 255, 0.05);
-
-
         }
-
-
-
-
 
         .gradient-animated {
-
-
             background: linear-gradient(-45deg, #040a1a, #0b1735, #11254e, #1b3566);
-
-
             background-size: 400% 400%;
-
-
             animation: gradient 20s ease infinite;
-
-
         }
-
-
-
-
 
         @keyframes gradient {
-
-
             0% { background-position: 0% 50%; }
-
-
             50% { background-position: 100% 50%; }
-
-
             100% { background-position: 0% 50%; }
-
-
         }
-
-
-
-
-
-        .border-gradient {
-
-
-            position: relative;
-
-
-            background: linear-gradient(#020617, #020617) padding-box,
-
-
-                        linear-gradient(45deg, rgba(201,162,79,0.85), rgba(231,201,130,0.6)) border-box;
-
-
-            border: 2px solid transparent;
-
-
-            border-radius: 20px;
-
-
-        }
-
-
-
-
-
-        .border-gradient-gold {
-
-
-            background: linear-gradient(#020617, #020617) padding-box,
-
-
-                        linear-gradient(120deg, rgba(201,162,79,0.9), rgba(231,201,130,0.7)) border-box;
-
-
-            border: 3px solid transparent;
-
-
-        }
-
-
-
-
 
         .card-hover {
-
-
             transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-
-
         }
-
-
-
-
 
         .card-hover:hover {
-
-
             transform: translateY(-8px) scale(1.015);
-
-
         }
 
-
-
-
-
-        ::-webkit-scrollbar {
-
-
-            width: 10px;
-
-
+        .price-caption {
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.8);
         }
 
-
-
-
-
-        ::-webkit-scrollbar-track {
-
-
-            background: #020617;
-
-
+        .price-card--featured .price-figure {
+            font-size: clamp(3rem, 5vw, 4rem);
+            letter-spacing: 0;
         }
 
-
-
-
-
-        ::-webkit-scrollbar-thumb {
-
-
-            background: linear-gradient(180deg, rgba(201,162,79,0.7), rgba(111,135,183,0.8));
-
-
-            border-radius: 5px;
-
-
+        .price-card--featured .price-caption {
+            color: rgba(226, 232, 240, 0.92);
         }
 
+        .price-card--standard .price-caption {
+            color: rgba(148, 163, 184, 0.75);
+        }
 
+        .feature-card {
+            background: linear-gradient(150deg, rgba(20, 26, 54, 0.82), rgba(10, 14, 32, 0.82));
+            border: 1px solid rgba(136, 149, 255, 0.18);
+            border-radius: 20px;
+            padding: 1.75rem;
+            transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+        }
 
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(163, 176, 255, 0.32);
+            box-shadow: 0 24px 70px rgba(7, 11, 36, 0.45);
+        }
 
+        .faq-card {
+            background: rgba(9, 14, 32, 0.82);
+            border: 1px solid rgba(156, 172, 255, 0.16);
+            border-radius: 18px;
+            padding: 1.75rem;
+        }
 
-        .faq-item {
+        .faq-card p {
+            color: var(--color-text-secondary);
+        }
 
-
+        .portfolio-preview {
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            cursor: pointer;
             transition: all 0.3s ease;
-
-
         }
 
-
-
-
-
-        .faq-item:hover {
-
-
-            background: rgba(255, 255, 255, 0.02);
-
-
+        .portfolio-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
         }
 
+        .portfolio-preview::before {
+            content: 'Ver Demo Completo';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(201, 162, 79, 0.95);
+            color: #020618;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 10;
+        }
 
+        .portfolio-preview:hover::before {
+            opacity: 1;
+        }
+
+        .portfolio-preview::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(2, 6, 24, 0.8) 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .portfolio-preview:hover::after {
+            opacity: 1;
+        }
+
+        /* Estilos de Escassez */
+        .scarcity-badge {
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(239, 68, 68, 0.6); }
+        }
+
+        .urgency-timer {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.1));
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .countdown-digit {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.2), rgba(220, 38, 38, 0.15));
+            border: 1px solid rgba(239, 68, 68, 0.4);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .limited-slots {
+            background: linear-gradient(90deg, rgba(234, 179, 8, 0.1), rgba(202, 138, 4, 0.05));
+            border-left: 3px solid #eab308;
+        }
+
+        @keyframes blink-dot {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .booking-indicator {
+            animation: blink-dot 1.5s ease-in-out infinite;
+        }
+
+        /* Estilos do Logo Animado */
+        .logo-hero-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            margin: 0 auto 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-hero-wrapper {
+            position: relative;
+            filter: drop-shadow(0 0 40px rgba(201, 162, 79, 0.3));
+        }
+
+        .decorative-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(201, 162, 79, 0.2);
+        }
+
+        .circle-1 {
+            width: 280px;
+            height: 280px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .circle-2 {
+            width: 340px;
+            height: 340px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #c9a24f;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #c9a24f;
+        }
+
+        .logo-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.9), rgba(236, 72, 153, 0.9));
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+            opacity: 0;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .logo-hero-container {
+                height: 200px;
+                max-width: 400px;
+            }
+            .circle-1, .circle-2 {
+                display: none;
+            }
+            .logo-badge {
+                font-size: 9px;
+                padding: 4px 10px;
+            }
+        }
     </style>
-
-
 </head>
-
-
 <body class="bg-slate-950 text-gray-100 overflow-x-hidden">
-
-
     
-
-
-    <!-- Hero Section Moderna com Gradiente Animado -->
-
-
+    <!-- Hero Section -->
     <section class="hero relative min-h-screen flex items-center justify-center overflow-hidden">
-
-
-        <!-- Background animado com gradiente -->
-
-
         <div class="absolute inset-0 gradient-animated opacity-20"></div>
-
-
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=\"60\" height=\"60\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cdefs%3E%3Cpattern id=\"grid\" width=\"60\" height=\"60\" patternUnits=\"userSpaceOnUse\"%3E%3Cpath d=\"M 60 0 L 0 0 0 60\" fill=\"none\" stroke=\"rgba(255,255,255,0.03)\" stroke-width=\"1\"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width=\"100%25\" height=\"100%25\" fill=\"url(%23grid)\"/%3E%3C/svg%3E')]"></div>
         
-
-
-        <!-- Mesh gradient overlay -->
-
-
-        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-pink-900/20"></div>
-
-
-        
-
-
-        <!-- Grid pattern -->
-
-
-        <div class="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cpattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse"%3E%3Cpath d="M 60 0 L 0 0 0 60" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/%3E%3C/pattern%3E%3C/defs%3E%3Crect width="100%25" height="100%25" fill="url(%23grid)"/%3E%3C/svg%3E')]"></div>
-
-
-        
-
-
         <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-
-
-            <div class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/5 border border-amber-300/40 mb-8">
-
-
-                <span class="relative flex h-2 w-2">
-
-
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-200 opacity-75"></span>
-
-
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-400"></span>
-
-
-                </span>
-
-
-                <span class="eyebrow">Proposta Exclusiva para Bezerra e Pacheco</span>
-
-
-            </div>
-
-
             
-
-
+            <!-- Logo Animado -->
+            <div class="logo-hero-container">
+                <!-- Círculos decorativos -->
+                <div class="decorative-circle circle-1"></div>
+                <div class="decorative-circle circle-2"></div>
+                
+                <!-- Sparkles -->
+                <div class="sparkle" style="top: 20%; left: 10%;"></div>
+                <div class="sparkle" style="top: 30%; right: 15%;"></div>
+                <div class="sparkle" style="bottom: 25%; left: 20%;"></div>
+                <div class="sparkle" style="bottom: 35%; right: 10%;"></div>
+                
+                <!-- Logo principal -->
+                <div class="logo-hero-wrapper">
+                    <svg id="logoHeroSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 599.78 274.57" style="width: 100%; max-width: 500px; height: auto;">
+                        <defs>
+                            <style>
+                                .cls-1 { fill: #bd9a5f; }
+                                .cls-2 { fill: #c29a58; }
+                                .cls-3 { fill: #bd9556; }
+                                .cls-4 { fill: #bc9657; }
+                            </style>
+                        </defs>
+                        <g class="logo-group">
+                            <path class="cls-4 letter" d="M332.62,84.04c-.19.16-.22.44-.07.63.06.08.15.13.24.15,2.35.57,4.85,1.48,7.49,2.71,14.07,6.57,22.38,17.89,24.96,33.96.19,1.18-.62,2.29-1.81,2.48-.11.02-.22.03-.34.03h.06c-.92,0-1.71-.68-1.83-1.59-1.03-7.67-4.47-14.74-10.34-21.2-8.54-9.41-18.87-13.4-31.29-13.2-5.9.1-11.43-.29-16.83-.17-11.34.26-22.35.28-33.05.06-2.24-.05-4.37-.2-6.37-.46-.22-.03-.41.12-.44.33,0,.02,0,.04,0,.05v82.92c0,.69.57,1.26,1.26,1.26h33.33c.23,0,.41-.18.41-.4h0v-41.84c0-.29.23-.52.52-.53,18.3-.12,36.77-.09,55.41.09,6.45.06,12.61-1.49,18.48-4.66,11.97-6.47,18.82-19.06,19.67-32.52.72-11.19-.63-20.55-7.22-29.89-5.05-7.15-11.68-12.29-19.87-15.43-.59-.23-.99-.78-.99-1.42v-2.76c0-.38.31-.69.69-.68.08,0,.15.01.23.04,5.46,1.91,9.63,3.84,12.51,5.77,11.17,7.52,17.53,18.11,19.1,31.75,2.08,18.08-3.1,37.84-19.89,47.58-4.1,2.37-8.71,4.16-13.83,5.37-2.95.7-7.9,1.04-14.83,1.01-24.24-.11-37.96-.16-41.16-.17-.34,0-1.32-.08-2.96-.21-.43-.04-.81.28-.85.71,0,.02,0,.05,0,.07v42.43c0,.38-.31.68-.68.68h-44.08c-.13,0-.24-.11-.24-.24V.73c0-.4.32-.73.72-.73.01,0,.03,0,.04,0,5.09.29,10.41.41,15.93.38,15.14-.09,29.18-.12,42.11-.09,20.17.04,37.2,14.99,41.3,34.04.93,4.32,1.12,9.37.57,15.14-1.21,12.69-8.67,24.65-19.62,31.39-2.07,1.26-5,2.05-6.43,3.18ZM263,5.05l-.4,77.62c0,.18.15.33.33.33h0l52.13.27c21.61.11,39.23-17.32,39.34-38.93.11-21.62-17.32-39.23-38.94-39.34h0l-52.13-.28c-.18,0-.33.15-.33.33h0Z"/>
+                            <path class="cls-1 letter" d="M309.22,172.91c.04-.74.68-1.31,1.42-1.27,0,0,.01,0,.02,0,12.06.84,24.72,0,34.59-7.86,8.57-6.85,13.68-15.28,15.32-25.3.17-1,.83-1.85,1.77-2.26l1.5-.65c.69-.3,1.5.02,1.8.71.1.22.13.47.1.71-2.61,21.19-17.71,36.51-39.13,39.35-3.09.41-8.51.46-16.24.17-.73-.03-1.31-.64-1.28-1.38,0-.01,0-.02,0-.03l.13-2.19Z"/>
+                            <path class="cls-3 letter" d="M310.46,229.79c-.1.37-.48.59-.84.49-.27-.07-.47-.3-.51-.57-1.15-7.51-5.16-11.31-12.02-11.4-2.73-.04-4.98.67-6.75,2.13-10.44,8.57-.09,19.78,6.81,25.91,5.35,4.75,10.88,9.62,16.58,14.6.24.22.62.19.83-.05.07-.08.12-.18.14-.28.51-2.65.68-5.37.51-8.16-.28-4.6-.48-7.99-4.85-9.88-.35-.14-.52-.54-.38-.9.1-.26.35-.43.63-.43,5-.14,10.74-.64,12.47-.04.48.16.75.68.59,1.16-.1.29-.33.52-.63.6-1.31.39-2.25.82-2.8,1.3-.25.23-.38.56-.35.89.76,7.23.03,10.95-1.72,17.16-.23.8-.05,1.65.48,2.3,2.81,3.43,6.97,5.23,11.28,6.82.44.17.67.65.51,1.08-.02.05-.04.1-.07.14-.15.24-.53.37-1.15.4-5.23.27-10.05-1.11-14.46-4.12-.31-.21-.71-.18-.99.07-11.76,10.63-39.15,5.85-39.91-12.95-.29-6.93,2.65-12.21,8.8-15.83.35-.21.51-.64.38-1.03-.35-1.08-.91-2.58-1.68-4.51-2.03-5.11-1.29-9.81,2.23-14.1,6.03-7.38,17.93-6.3,25.26-1.17,2.46,1.72,1.96,3.24,1.94,6-.02,2.18-.13,3.64-.33,4.37ZM285.96,267.37c1.18,1.07,2.36,1.86,3.54,2.38,7.92,3.47,15.11,2.48,21.58-2.98.27-.22.3-.62.07-.89-.03-.03-.05-.06-.08-.08-5.37-4.37-9.84-8.16-13.41-11.39-3.57-3.22-7.79-7.28-12.67-12.19-.24-.25-.64-.25-.89,0-.03.03-.06.06-.08.1-4.78,6.99-5.04,14.24-.79,21.77.63,1.12,1.54,2.22,2.73,3.29Z"/>
+                            <path class="cls-4 letter" d="M241.32,267.64l-4.46-10.28c-.1-.22-.32-.36-.56-.36h-15.69c-.24,0-.46.15-.56.37l-4.29,10.18c-.09.21-.29.36-.52.37l-1.75.13c-.33.03-.62-.22-.65-.56,0-.1,0-.19.05-.28l16.62-39.44c.13-.31.48-.45.79-.33.14.06.26.17.32.32l17.1,39.39c.13.31,0,.66-.31.8-.08.03-.16.05-.25.05h-5.29c-.24,0-.46-.14-.56-.36ZM220.99,253.52c-.08.17,0,.37.17.45.05.02.1.03.15.03l14.4-.06c.19,0,.34-.16.34-.34,0-.04,0-.09-.03-.13l-7.26-16.66c-.08-.17-.28-.25-.45-.17-.08.03-.14.09-.17.17l-7.15,16.71Z"/>
+                            <path class="cls-2 letter" d="M407.6,266.9c.23.53-.01,1.15-.54,1.38-.14.06-.3.09-.46.09l-3.79-.13c-.98-.03-1.85-.63-2.22-1.54l-3.67-9.06c-.16-.39-.54-.64-.96-.64l-15.82-.09c-.28,0-.52.16-.63.41l-4.18,9.77c-.3.7-.94,1.18-1.69,1.27l-.48.06c-.5.04-.94-.33-.98-.83-.01-.14,0-.29.06-.42l16.59-39.46c.2-.49.76-.72,1.25-.52.23.1.42.28.52.51l17,39.2ZM380.6,253.3c-.11.25,0,.55.26.66.06.03.13.04.19.04l14.17.15c.28,0,.5-.22.51-.49,0-.07-.01-.13-.04-.2l-6.91-16.79c-.11-.26-.4-.38-.65-.27-.12.05-.22.14-.27.26l-7.26,16.64Z"/>
+                            <path class="cls-4 letter" d="M456.71,269h-3.44c-.7,0-1.27-.57-1.27-1.27v-38.46c0-.7.57-1.27,1.27-1.27h3.46c.7,0,1.27.57,1.27,1.27v15.46c0,.7.58,1.27,1.29,1.27h15.44c.7,0,1.27-.57,1.27-1.27v-15.46c0-.7.58-1.27,1.29-1.27,0,0-.07,0-.07,0h3.51c.7,0,1.27.57,1.27,1.27v37.46c0,.7-.57,1.27-1.27,1.27h-3.46c-.7,0-1.27-.57-1.27-1.27v-16.43c0-.72-.58-1.3-1.29-1.3h-15.42c-.71,0-1.29.58-1.29,1.3h0v17.41c0,.72-.58,1.3-1.29,1.3h0Z"/>
+                            <path class="cls-4 letter" d="M555.17,231.68l-.07,1.18c-.03.53-.49.93-1.02.9-.17-.01-.33-.07-.47-.16-5.97-4.05-13.49-4.04-19.17.07-2.71,1.97-4.56,5.2-5.56,9.7-2.17,9.86,1.78,21.2,12.66,23.09,4.43.77,8.85.07,13.24-2.11.45-.22,1-.04,1.22.4.07.14.1.3.09.46l-.04.53c-.04.61-.43,1.13-1,1.34-9.3,3.39-17.8,2.6-25.5-2.38-1.55-1.01-2.87-2.34-3.96-4.01-7.02-10.78-4.15-24.38,7.46-30.38,4.54-2.35,9.93-3.01,16.18-1.98,2.07.34,3.59.71,4.54,1.1.9.38,1.46,1.28,1.4,2.25Z"/>
+                            <path class="cls-4 letter" d="M596.59,259.08c-7.25,12.76-26.77,13.54-33.95.58-1.91-3.45-2.87-6.94-2.89-10.47-.05-11.21,6.85-19.66,18.22-21.14,7.82-1.01,17.14,1.64,20.05,9.76,2.75,7.67,2.27,14.76-1.43,21.27ZM580.68,230.24c-7.44-.33-13.84,7.61-14.28,17.72h0c-.44,10.11,5.23,18.58,12.68,18.9,0,0,0,0,0,0,7.44.32,13.84-7.61,14.28-17.72h0c.44-10.11-5.23-18.58-12.68-18.9h0Z"/>
+                            <path class="cls-4 letter" d="M185.52,248.93c-.49-.05-.94.31-.99.81,0,.03,0,.06-.53.09v16.54c.53,1.14-.39,2.07-1.53,1.63h-2.21c-1.1.44-1.99-.45-2.26-1.55h0v-37.14c.27-.61.76-1.11,1.37-1.13,5.41-.14,10.2-.04,14.39.29,6.4.51,12.27,4.25,11.08,11.46-.89,5.45-5.09,7.83-10.22,8.71-.21.04-.35.24-.31.45.01.06.04.12.07.17l13.51,16.86c.44.54.35,1.32-.19,1.76-.22.18-.5.28-.79,1.12h-2.28c-1.73-.84-3.36-1.68-4.36-3.09-5.87-8.29-9.01-12.79-9.42-13.5-1.19-2.08-2.96-3.24-5.33-3.48ZM184,232.01l.06,13.01c0,.54.47.98,1.03.97h0l4.92-.02c4.44-.02,8.02-3.07,7.99-6.81,0,0,0,0,0,0v-1.45c-.03-3.73-3.64-6.74-8.07-6.71l-4.92.02c-.56,0-1.01.45-1.01.99h0Z"/>
+                            <path class="cls-3 letter" d="M349.6,249.77c-.28-.05-.54.13-.59.41,0,.03,0,.06,0,.09v16.07c0,.92-.74,1.66-1.65,1.66h-2.94c-.78,0-1.41-.63-1.41-1.41h0v-37.96c0-.45.36-.82.81-.83,2.88-.08,6.94-.02,12.18.18,8.09.3,16.11,4.1,13.58,13.78-2.16,8.26-13.07,9.31-19.97,8.01ZM350,231.9l-.08,14.14c0,.52.41.95.94.95,0,0,0,0,0,0l5.85.03c4,.02,7.26-3.14,7.28-7.06v-1.83c.03-3.92-3.2-7.12-7.2-7.14l-5.85-.03c-.52,0-.94.42-.95.93Z"/>
+                            <path class="cls-4 letter" d="M441.85,233.65c-6.32-3.37-12.72-4.47-18.81-.38-7.4,4.98-8.26,15.87-4.78,23.7,3.11,6.99,8.42,10.27,15.93,9.84,2.71-.15,6.77-.61,8.89-2.46.37-.32.93-.28,1.26.10.06.07.11.15.14.23.49,1.16.33,1.89-.46,2.2-9.15,3.53-17.77,2.97-25.84-1.68-1.94-1.12-3.54-2.80-4.81-5.05-4.15-7.38-4.43-14.62-.82-21.73,3.03-5.95,9.97-9.82,16.21-10.34,4.43-.37,8.88.03,13.33,1.2,1.13.30,1.89,1.35,1.82,2.51l-.05.73c-.04.76-.69,1.33-1.45,1.29-.2-.01-.39-.07-.56-.16Z"/>
+                            <path class="cls-1 letter" d="M19.13,247.62c2.09,1,6.14,1.57,7.61,3.54,6.39,8.55-2.79,15.68-10.56,16.51-4.34.47-9.47.57-15.39.31-.44-.02-.79-.38-.79-.82v-38.13c0-.44.35-.79.79-.80,3.9-.08,8.64.07,14.21.46,4.70.32,10.51,3.07,11.25,8.24.52,3.68-1.13,6.95-4.52,8.56-1.6.76-2.47,1.18-2.62,1.26-.24.13-.32.43-.19.67.05.09.12.16.21.20ZM6,231.6l.20,13.86c0,.30.24.53.54.53h0l4.13-.06c5.09-.07,9.18-3.38,9.12-7.40v-.38c-.05-4.02-4.22-7.22-9.32-7.16,0,0,0,0,0,0l-4.13.06c-.30,0-.54.24-.54.53,0,0,0,0,0,.01ZM6.26,249.70l.28,15.72c.01.33.29.59.62.59l4.32-.07c5.89-.10,10.60-3.94,10.52-8.56,0,0,0,0,0,0v-.18c-.08-4.62-4.92-8.29-10.81-8.19,0,0,0,0,0,0l-4.32.08c-.34,0-.60.28-.60.62h0Z"/>
+                            <path class="cls-3 letter" d="M38,228.58c0-.32.26-.58.58-.58,0,0-.52,0-.52,0h22.08c1.03,0,1.87.82,1.87,1.83h0v.80c0,.86-.71,1.55-1.58,1.55-.10,0-.20,0-.29-.03-4.78-.87-9.88-1.24-15.30-1.11-.46.01-.83.39-.83.85v13.92s.97.77,1.40.77c.02,0,.04,0,.06,0l10.89-.78c.68-.05,1.28.46,1.33,1.14,0,0,0,0,0,0l.09,1.23c.03.45-.31.84-.77.88-.02,0-.04,0-.06-.06h-12.04c-.25.06-.90.52-.90.52h0v15.50c.44.36.73.66,1.10.98h.04l15.99-1.46c.74-.06,1.38.50,1.44,1.24,0,0,0,0,0,0l.07.92c.06.87-.60,1.61-1.47,1.67-.03,0-.10.62-.10.62h-21.97c-.61,0-1.10-.49-1.10-1.09h0v-39.34Z"/>
+                            <path class="cls-4 letter" d="M113,264.91c0,.30.24.54.53.54.01,0,.03,0,.04,0l16.39-1.17c.71-.05,1.32.48,1.37,1.19,0,.06,0,.11,0,.17l-.03.57c-.06,1.01-.90,1.80-1.91,1.80h-21.50c-.49,0-.89-.40-.89-.89h0v-38.53c0-.32.25-.57.57-.57h21.74c.93,0,1.69.76,1.69,1.69v1.82s-.98,1.31-1.71,1.31c-.06,0-.12,0-.19-.01l-3.81-.56c-.05,0-.10-.01-.15-.01l-11.79-.70c-.40-.03-.74.28-.77.68,0,.02,0,.03.42.05v13.58c-.42.20-.26.36-.06.15h11.86c.66.21,1.20.74,1.20,1.40,0,.03,0,.05,0,.08l-.02.30c-.03.62-1.16,1.22-1.16,1.22h-11.34c-.27,0-.48.21-.48.48v15.43Z"/>
+                            <path class="cls-2 letter" d="M157.25,248.59c-.31.07-.51.38-.44.70.02.09.06.17.12.24l13.29,16.59c.42.53.33,1.31-.19,1.73-.21.17-.48.26-.76.15h-2.61c-1.69.11-3.27-.74-4.21-2.15l-10.30-15.45c-.06-.09-.14-.17-.23-.24-.98-.71-2.44-1.04-4.39-.98-.54.02-.96.45-1.53.99v16.41c.57.97-.21,1.76-1.18,2.42h-3.08c-.86-.66-1.56-1.36-1.74-2.22v-37.34c.18-.51.57-.93,1.08-.96,4.81-.33,9.63-.26,14.48.19,5.69.52,11.49,3.36,11.22,10.07-.25,6.41-3.85,8.58-9.53,9.85ZM147,233.04l-.02,12.90c0,.58.47,1.05,1.04,1.05h4.84c3.94.02,7.13-3.08,7.14-6.91h0v-1.14c0-3.83-3.18-6.94-7.12-6.94h-4.84c-.57,0-1.04.46-1.04,1.04h0Z"/>
+                            <path class="cls-2 letter" d="M498.41,249c-.23,0-.41.18-.41.41v-.23,15.3c0,.49.39.89.88.89.02,0,.05,0,.07,0l16.29-1.16c.39-.03.73.27.75.67,0,.02,0,.03,0,.05v2.09c0,.54-.44.98-.98.98h-22.19c-.46,0-.83-.37-.83-.82h0v-37.37c0-.44.36-.80.80-.80h-.17,21.28c.61,0,1.10.49,1.10,1.10h0v2.53c0,.41-.33.75-.75.75-.06,0-.12,0-.18-.02-4.77-1.15-9.85-1.68-15.24-1.57-.46,0-.83.38-.83.85v12.89c0,.26.21.47.47.47h11.39c.63,0,1.14.51,1.14,1.14v.63c0,.68-.55,1.23-1.23,1.23h-11.36Z"/>
+                            <path class="cls-1 letter" d="M89.97,231.80c.22-.37.10-.84-.26-1.06-.13-.08-.29-.12-.44-.11l-16.79,1.19c-.94.07-1.76-.64-1.83-1.58,0,0,0-.02,0-.03v-.20c-.05-.63.19-1.28.70-1.66.36-.26.71-.37,1.07-.37h25.81c.50,0,.91.42.91.92,0,.17-.05.34-.14.48l-22.36,34.66c-.21.33-.11.77.22.98.13.08.28.12.43.11l19.03-1.36c.95-.07,1.78.65,1.85,1.60h0s.09,1.27.09,1.27c.05.69-.46,1.29-1.15,1.34-.03,0-.06,0-.09,0h-27.71c-.66,0-1.19-.53-1.19-1.20,0-.18.04-.36.12-.53,1.11-2.31,1.85-3.73,2.24-4.27,6.38-9.13,12.89-19.20,19.51-30.21Z"/>
+                        </g>
+                        <rect class="cls-3 divider" x="316.91" y="12.2" width="4.67" height="59.99" rx=".91" ry=".91" transform="translate(275.25 361.21) rotate(-89.68)"/>
+                        <path class="cls-1 ampersand" d="M299.71,181.73l1.82-.03c.82-.01,1.5.72,1.51,1.65l.2,14.62c.01.92-.64,1.68-1.46,1.70l-1.82.03c-.82.01-1.5-.72-1.51-1.65l-.2-14.62c-.01-.92.64-1.68,1.46-1.70Z"/>
+                    </svg>
+                    
+                    <!-- Badge personalizado -->
+                    <div class="logo-badge">Proposta Exclusiva</div>
+                </div>
+            </div>
+            
             <h1 class="hero-title heading-xxl font-display mb-6 text-white">
-
-
-                <span class="bg-gradient-to-r from-[#e6cf8f] via-[#c9a24f] to-[#d7bb6a] bg-clip-text text-transparent">
-
-
+                <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">
                     Transforme a Presença Digital
-
-
                 </span>
-
-
                 <br />
-
-
-                <span class="text-secondary">
-
-
+                <span class="text-[#E8DCC0]">
                     do Seu Escritório
-
-
                 </span>
-
-
             </h1>
-
-
             
-
-
-            <p class="hero-subtitle body-large text-secondary max-w-3xl mx-auto mb-12">
-
-
-                Sites sob medida para escritórios de advocacia. 
-
-
-                <span class="font-display text-[#d7bb6a]">Tecnologia de ponta</span> com 
-
-
-                <span class="font-display text-[#c9a24f]">design sofisticado</span>.
-
-
+            <p class="hero-subtitle body-large text-[#B8B5C8] max-w-3xl mx-auto mb-12">
+                Sites sob medida para escritórios de advocacia, com <span class="font-semibold text-[#D4AF37]">tecnologia de ponta</span> e <span class="font-semibold text-[#D4AF37]">design sofisticado</span> para inspirar confiança.
             </p>
-
-
             
-
-
             <div class="hero-buttons flex flex-col sm:flex-row gap-4 justify-center items-center">
-
-
-                <a href="#pricing" class="group relative px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-semibold text-white shadow-xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105">
-
-
+                <a href="#pricing" class="group relative px-8 py-4 bg-gradient-to-r from-[#D4AF37] via-[#E8C957] to-[#C9A24F] rounded-full font-semibold text-[#0C1226] shadow-lg hover:shadow-[#D4AF37]/40 transition-all duration-300 hover:scale-105">
                     <span class="relative z-10">Ver Proposta Completa</span>
-
-
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-
-
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#E8C957] via-[#F4E5B7] to-[#D4AF37] rounded-full blur-xl opacity-40 group-hover:opacity-60 transition-opacity"></div>
                 </a>
-
-
-                <a href="#portfolio" class="px-8 py-4 glass border border-gray-700 rounded-full font-semibold hover:bg-white/10 transition-all duration-300">
-
-
-                    Explorar Portfolio
-
-
+                <a href="#portfolio" class="px-8 py-4 rounded-full border-2 border-[#D4AF37]/40 text-[#E8DCC0] font-semibold hover:bg-[#D4AF37]/10 hover:border-[#D4AF37]/60 transition-all duration-300">
+                    Explorar Portfólio
                 </a>
-
-
             </div>
-
-
         </div>
-
-
         
-
-
-        <!-- Decorative blobs -->
-
-
-        <div class="absolute top-20 left-20 w-96 h-96 bg-purple-500 rounded-full filter blur-[128px] opacity-20"></div>
-
-
-        <div class="absolute bottom-20 right-20 w-96 h-96 bg-pink-500 rounded-full filter blur-[128px] opacity-20"></div>
-
-
+        <div class="absolute top-10 left-10 w-[700px] h-[700px] bg-[#D4AF37] rounded-full filter blur-[180px] opacity-25"></div>
+        <div class="absolute bottom-10 right-10 w-[650px] h-[650px] bg-[#E8C957] rounded-full filter blur-[180px] opacity-20"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#C9A24F] rounded-full filter blur-[200px] opacity-10"></div>
     </section>
 
-
-
-
-
-    <!-- SEÇÃO DE VALOR - Por que investir em um site profissional -->
-
-
+    <!-- SEÇÃO DE VALOR -->
     <section class="value-props relative py-32 overflow-hidden">
-
-
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
-
-
         
-
-
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
             <div class="text-center mb-20">
-
-
                 <h2 class="heading-xl font-display mb-6">
-
-
                     <span class="bg-gradient-to-r from-[#f4e5b7] to-[#c9a24f] bg-clip-text text-transparent">
-
-
                         Por Que Investir em um Site Profissional?
-
-
                     </span>
-
-
                 </h2>
-
-
-                <p class="body-large text-secondary max-w-3xl mx-auto">
-
-
+                <p class="text-lg text-secondary max-w-3xl mx-auto">
                     Aumente sua credibilidade, alcance mais clientes e otimize seus processos
-
-
                 </p>
-
-
             </div>
-
-
-
-
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-
-                <!-- Value Card 1 -->
-
-
-                <div class="glass-dark rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-
-
+                <div class="glass-dark rounded-2xl p-8 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-6">
-
-
                         <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-
-
                         </svg>
-
-
                     </div>
-
-
-                    <h3 class="heading-sm font-display text-white mb-4">Aumento de 300% em Consultas</h3>
-
-
-                    <p class="body-small text-muted">
-
-
+                    <h3 class="heading-md font-display mb-4">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Aumento de 300%</span> <span class="text-white">em Consultas</span>
+                    </h3>
+                    <p class="text-sm text-muted">
                         Escritórios com sites profissionais recebem em média 3x mais consultas online do que aqueles sem presença digital adequada.
-
-
                     </p>
-
-
                 </div>
 
-
-
-
-
-                <!-- Value Card 2 -->
-
-
-                <div class="glass-dark rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-
-
+                <div class="glass-dark rounded-2xl p-8 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-6">
-
-
                         <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-
-
                         </svg>
-
-
                     </div>
-
-
-                    <h3 class="heading-sm font-display text-white mb-4">Economia de 10h Semanais</h3>
-
-
-                    <p class="body-small text-muted">
-
-
+                    <h3 class="heading-md font-display mb-4">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Economia de 10h</span> <span class="text-white">Semanais</span>
+                    </h3>
+                    <p class="text-sm text-muted">
                         Automatize agendamentos, consultas iniciais e troca de documentos. Foque no que realmente importa: seus clientes.
-
-
                     </p>
-
-
                 </div>
 
-
-
-
-
-                <!-- Value Card 3 -->
-
-
-                <div class="glass-dark rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-
-
+                <div class="glass-dark rounded-2xl p-8 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-6">
-
-
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-
-
                         </svg>
-
-
                     </div>
-
-
-                    <h3 class="heading-sm font-display text-white mb-4">Credibilidade Instantânea</h3>
-
-
-                    <p class="body-small text-muted">
-
-
+                    <h3 class="heading-md font-display mb-4">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Credibilidade</span> <span class="text-white">Instantânea</span>
+                    </h3>
+                    <p class="text-sm text-muted">
                         93% dos clientes pesquisam online antes de contratar um advogado. Seja a primeira escolha com um site que transmite confiança.
-
-
                     </p>
-
-
                 </div>
 
-
-
-
-
-                <!-- Value Card 4 -->
-
-
-                <div class="glass-dark rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-
-
+                <div class="glass-dark rounded-2xl p-8 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-500/20 flex items-center justify-center mb-6">
-
-
                         <svg class="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-
-
                         </svg>
-
-
                     </div>
-
-
-                    <h3 class="heading-sm font-display text-white mb-4">ROI em 3 Meses</h3>
-
-
-                    <p class="body-small text-muted">
-
-
+                    <h3 class="heading-md font-display mb-4">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">ROI em 3 Meses</span>
+                    </h3>
+                    <p class="text-sm text-muted">
                         O investimento se paga em média em 3 meses com o aumento de clientes e a otimização do tempo da equipe.
-
-
                     </p>
-
-
                 </div>
 
-
-
-
-
-                <!-- Value Card 5 -->
-
-
-                <div class="glass-dark rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-
-
+                <div class="glass-dark rounded-2xl p-8 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center mb-6">
-
-
                         <svg class="w-6 h-6 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
-
-
                         </svg>
-
-
                     </div>
-
-
-                    <h3 class="heading-sm font-display text-white mb-4">Alcance Nacional</h3>
-
-
-                    <p class="body-small text-muted">
-
-
+                    <h3 class="heading-md font-display mb-4">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Alcance</span> <span class="text-white">Nacional</span>
+                    </h3>
+                    <p class="text-sm text-muted">
                         Expanda sua atuação para além da região local. Seja encontrado por clientes de todo o Brasil.
-
-
                     </p>
-
-
                 </div>
 
-
-
-
-
-                <!-- Value Card 6 -->
-
-
-                <div class="glass-dark rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 transition-all">
-
-
+                <div class="glass-dark rounded-2xl p-8 border border-[#D4AF37]/20 hover:border-[#D4AF37]/40 transition-all">
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center mb-6">
-
-
                         <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-
-
                         </svg>
-
-
                     </div>
-
-
-                    <h3 class="heading-sm font-display text-white mb-4">Análises e Métricas</h3>
-
-
-                    <p class="body-small text-muted">
-
-
+                    <h3 class="heading-md font-display mb-4">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Análises</span> <span class="text-white">e Métricas</span>
+                    </h3>
+                    <p class="text-sm text-muted">
                         Tome decisões baseadas em dados reais sobre o comportamento dos seus visitantes e origem dos clientes.
-
-
                     </p>
-
-
                 </div>
-
-
             </div>
-
-
         </div>
-
-
     </section>
 
-
-
-
-
-    <!-- SEÇÃO DE PREÇOS REFORMULADA - Projeto Único -->
-
-
+    <!-- SEÇÃO DE PREÇOS -->
     <section class="pricing relative py-32 overflow-hidden" id="pricing">
-
-
-        <!-- Background effects -->
-
-
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-purple-950/10 to-slate-950"></div>
-
-
         
-
-
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
-            <!-- Header -->
-
-
             <div class="text-center mb-20">
-
-
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass border border-purple-500/20 mb-6">
-
-
                     <svg class="w-4 h-4 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-
-
                         <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
-
-
                     </svg>
-
-
                     <span class="eyebrow">Investimento Único</span>
-
-
                 </div>
-
-
                 
-
-
                 <h2 class="pricing-title heading-xl font-display mb-6">
-
-
-                    <span class="bg-gradient-to-r from-[#f4e5b7] via-[#d7bb6a] to-[#c9a24f] bg-clip-text text-transparent">
-
-
+                    <span class="bg-gradient-to-r from-[#d9deff] via-[#b7c5ff] to-[#9faef2] bg-clip-text text-transparent">
                         Proposta Personalizada
-
-
                     </span>
-
-
                 </h2>
-
-
-                <p class="pricing-subtitle body-large text-secondary max-w-3xl mx-auto">
-
-
+                <p class="pricing-subtitle text-lg text-secondary max-w-3xl mx-auto">
                     Escolha o pacote ideal para o Bezerra e Pacheco. 
-
-
                     <span class="font-display text-[#d7bb6a] font-semibold">Pagamento único</span>, 
-
-
                     site para sempre.
-
-
                 </p>
-
-
             </div>
-
-
-
-
 
             <!-- Grid de Preços -->
-
-
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-
-
                 
-
-
                 <!-- PLANO BRONZE -->
-
-
-                <div class="price-card animate-card relative group">
-
-
-                    <div class="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-amber-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-
-                    <div class="relative glass-dark rounded-3xl p-8 border border-orange-500/20 hover:border-orange-500/40 transition-all duration-300 card-hover h-full flex flex-col">
-
-
+                <div class="price-card price-card--standard animate-card relative group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#432b12]/22 to-[#c58a3d]/18 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative glass-dark rounded-3xl p-8 border border-[#c58a3d]/25 hover:border-[#c58a3d]/50 transition-all duration-300 card-hover h-full flex flex-col">
                         
-
-
-                        <!-- Plan Badge -->
-
-
+                        
                         <div class="flex items-center justify-between mb-8">
-
-
                             <div class="flex items-center gap-3">
-
-
-                                <div class="w-2 h-2 bg-orange-500 rounded-full animate-pulse"></div>
-
-
-                                <span class="uppercase-spacing text-orange-200">Bronze</span>
-
-
+                                <div class="w-2 h-2 bg-[#c58a3d] rounded-full animate-pulse"></div>
+                                <span class="uppercase tracking-[0.18em] font-medium text-[#f1d7b2]">Bronze</span>
                             </div>
-
-
                         </div>
-
-
-
-
-
-                        <!-- Price -->
-
 
                         <div class="mb-8">
-
-
                             <div class="flex items-baseline gap-2 mb-3">
-
-
                                 <span class="price-figure">R$3.000</span>
-
-
-                                <span class="price-caption">projeto único</span>
-
-
+                                <span class="price-caption">Projeto único</span>
                             </div>
-
-
-                            <p class="body-small text-secondary">Site institucional essencial</p>
-
-
-                            <p class="body-small text-muted mt-2">Entrega em 15 dias</p>
-
-
+                            <p class="text-sm text-secondary">Site institucional essencial</p>
+                            <p class="text-sm text-muted mt-2">Entrega em 15 dias</p>
                         </div>
-
-
-
-
-
-                        <!-- Features -->
-
 
                         <div class="space-y-4 mb-8 flex-grow">
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#c58a3d] to-[#d4a257] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1d1403]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Site com até 5 páginas otimizadas</span>
-
-
+                                <span class="text-sm text-secondary">Site com até 5 páginas otimizadas</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#c58a3d] to-[#d4a257] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1d1403]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Design responsivo premium</span>
-
-
+                                <span class="text-sm text-secondary">Design responsivo premium</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#c58a3d] to-[#d4a257] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1d1403]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">SEO básico configurado</span>
-
-
+                                <span class="text-sm text-secondary">SEO básico configurado</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#c58a3d] to-[#d4a257] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1d1403]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Formulário de contato inteligente</span>
-
-
+                                <span class="text-sm text-secondary">Formulário de contato inteligente</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-emerald-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#c58a3d] to-[#d4a257] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1d1403]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">1 ano de hospedagem grátis</span>
-
-
+                                <span class="text-sm text-secondary">1 ano de hospedagem grátis</span>
                             </div>
-
-
                         </div>
 
-
-
-
-
-                        <!-- CTA Button -->
-
-
-                        <button onclick="scrollToContact('Bronze')" class="w-full py-4 rounded-full bg-gradient-to-r from-orange-600/20 to-amber-600/20 border border-orange-500/30 text-orange-400 font-semibold hover:bg-gradient-to-r hover:from-orange-600/30 hover:to-amber-600/30 hover:border-orange-500/50 transition-all duration-300">
-
-
+                        <button onclick="scrollToContact('Bronze')" class="w-full py-4 rounded-full bg-gradient-to-r from-[#c58a3d]/25 to-[#e1bb7b]/20 border border-[#c58a3d]/50 text-[#f4d9a5] font-semibold hover:from-[#c58a3d]/35 hover:to-[#e1bb7b]/30 hover:border-[#c58a3d]/70 transition-all duration-300">
                             Solicitar Proposta Bronze
-
-
                         </button>
-
-
                     </div>
-
-
                 </div>
-
-
-
-
 
                 <!-- PLANO PRATA (MAIS POPULAR) -->
-
-
-                <div class="price-card animate-card relative group lg:-mt-8">
-
-
-                    <!-- Popular badge -->
-
-
+                <div class="price-card price-card--featured animate-card relative group lg:-mt-8">
                     <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-
-
-                        <div class="px-4 py-1 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white text-xs font-bold uppercase tracking-wider shadow-lg">
-
-
+                        <div class="px-4 py-1 rounded-full bg-gradient-to-r from-[#9faef2] via-[#c7d1ff] to-[#8ba2f0] text-slate-900 text-xs font-bold uppercase tracking-wider whitespace-nowrap shadow-lg">
                             Melhor Custo-Benefício
-
-
                         </div>
-
-
                     </div>
-
-
-                    
-
-
-                    <div class="absolute inset-0 bg-gradient-to-r from-purple-600/30 to-pink-600/30 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-
-                    <div class="relative border-gradient-gold rounded-3xl p-8 glass-dark hover:scale-[1.02] transition-all duration-300 h-full flex flex-col">
-
-
+                
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#9faef2]/25 to-[#b7c5ff]/25 rounded-3xl blur-xl opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative rounded-3xl p-8 glass-dark border-2 border-[#b7c5ff]/50 hover:scale-[1.02] transition-all duration-300 h-full flex flex-col">
                         
-
-
-                        <!-- Plan Badge -->
-
-
                         <div class="flex items-center justify-between mb-8">
-
-
                             <div class="flex items-center gap-3">
-
-
-                                <div class="w-2 h-2 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full animate-pulse"></div>
-
-
-                                <span class="uppercase-spacing bg-gradient-to-r from-[#f4e5b7] to-[#c9a24f] bg-clip-text text-transparent">Prata</span>
-
-
+                                <div class="w-2 h-2 bg-gradient-to-r from-[#9faef2] to-[#c7d1ff] rounded-full animate-pulse"></div>
+                                <span class="uppercase tracking-[0.22em] font-semibold text-slate-100/90">Prata</span>
                             </div>
-
-
                         </div>
-
-
-
-
-
-                        <!-- Price -->
-
 
                         <div class="mb-8">
-
-
                             <div class="flex items-baseline gap-2 mb-3">
-
-
                                 <span class="price-figure bg-gradient-to-r from-[#f4e5b7] via-[#d7bb6a] to-[#c9a24f] bg-clip-text text-transparent">R$5.000</span>
-
-
-                                <span class="price-caption">projeto único</span>
-
-
+                                <span class="price-caption">Projeto único</span>
                             </div>
-
-
-                            <p class="body-small text-secondary">Solução completa para crescimento</p>
-
-
-                            <p class="body-small text-muted mt-2">Entrega em 25 dias</p>
-
-
+                            <p class="text-sm text-secondary">Solução completa para crescimento</p>
+                            <p class="text-sm text-muted mt-2">Entrega em 25 dias</p>
                         </div>
-
-
-
-
-
-                        <!-- Features -->
-
 
                         <div class="space-y-4 mb-8 flex-grow">
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#9faef2] to-[#c7d1ff] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1a224c]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary font-medium">Tudo do plano Bronze</span>
-
-
+                                <span class="text-sm text-secondary font-medium">Tudo do plano Bronze</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#9faef2] to-[#c7d1ff] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1a224c]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Blog integrado com CMS</span>
-
-
+                                <span class="text-sm text-secondary">Blog integrado com CMS</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#9faef2] to-[#c7d1ff] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1a224c]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Design personalizado exclusivo</span>
-
-
+                                <span class="text-sm text-secondary">Design personalizado exclusivo</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#9faef2] to-[#c7d1ff] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1a224c]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">SEO avançado e Analytics</span>
-
-
+                                <span class="text-sm text-secondary">SEO avançado e Analytics</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#9faef2] to-[#c7d1ff] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1a224c]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Newsletter e automação de e-mails</span>
-
-
+                                <span class="text-sm text-secondary">Newsletter e automação de e-mails</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
                                 <div class="w-5 h-5 rounded-full bg-gradient-to-r from-purple-400 to-pink-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
                                     <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
-
-
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">2 anos de hospedagem grátis</span>
-
-
+                                <span class="text-sm text-secondary">2 anos de hospedagem grátis</span>
                             </div>
-
-
                         </div>
-
-
-
-
-
-                        <!-- CTA Button -->
-
 
                         <button onclick="scrollToContact('Prata')" class="w-full py-4 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold shadow-xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 group relative overflow-hidden">
-
-
                             <span class="relative z-10">Solicitar Proposta Prata</span>
-
-
                             <div class="absolute inset-0 bg-gradient-to-r from-pink-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-
                         </button>
-
-
                     </div>
-
-
                 </div>
-
-
-
-
 
                 <!-- PLANO OURO -->
-
-
-                <div class="price-card animate-card relative group">
-
-
-                    <div class="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-amber-600/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-
-                    <div class="relative glass-dark rounded-3xl p-8 border border-yellow-500/20 hover:border-yellow-500/40 transition-all duration-300 card-hover h-full flex flex-col">
-
-
+                <div class="price-card price-card--standard animate-card relative group">
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#6e5416]/22 to-[#d9b75a]/18 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div class="relative glass-dark rounded-3xl p-8 border border-[#d9b75a]/30 hover:border-[#d9b75a]/55 transition-all duration-300 card-hover h-full flex flex-col">
                         
-
-
-                        <!-- Plan Badge -->
-
-
-                        <div class="flex items-center justify-between mb-8">
-
-
-                            <div class="flex items-center gap-3">
-
-
-                                <div class="w-2 h-2 bg-yellow-500 rounded-full animate-pulse"></div>
-
-
-                                <span class="uppercase-spacing text-amber-200">Ouro</span>
-
-
-                            </div>
-
-
-                            <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
-
-
-                                Premium
-
-
-                            </span>
-
-
+                        <!-- Indicador de Alta Demanda -->
+                        <div class="absolute -top-3 -right-3 bg-gradient-to-r from-yellow-500 to-amber-500 text-slate-900 text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
+                            <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                            </svg>
+                            Mais procurado
                         </div>
-
-
-
-
-
-                        <!-- Price -->
-
+                        
+                        <div class="flex items-center justify-between mb-8">
+                            <div class="flex items-center gap-3">
+                                <div class="w-2 h-2 bg-[#d9b75a] rounded-full animate-pulse"></div>
+                                <span class="uppercase tracking-[0.18em] font-medium text-amber-200">Ouro</span>
+                            </div>
+                            <span class="text-xs px-2 py-1 rounded-full bg-yellow-500/10 text-yellow-400 border border-yellow-500/20">
+                                Premium
+                            </span>
+                        </div>
 
                         <div class="mb-8">
-
-
                             <div class="flex items-baseline gap-2 mb-3">
-
-
                                 <span class="price-figure">R$7.000</span>
-
-
-                                <span class="price-caption">projeto único</span>
-
-
+                                <span class="price-caption">Projeto único</span>
                             </div>
-
-
-                            <p class="body-small text-secondary">Plataforma completa e escalável</p>
-
-
-                            <p class="body-small text-muted mt-2">Entrega em 35 dias</p>
-
-
+                            <p class="text-sm text-secondary">Plataforma completa e escalável</p>
+                            <p class="text-sm text-muted mt-2">Entrega em 35 dias</p>
                         </div>
-
-
-
-
-
-                        <!-- Features -->
-
 
                         <div class="space-y-4 mb-8 flex-grow">
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#d9b75a] to-[#f0d992] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1f1603]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Tudo do plano Prata</span>
-
-
+                                <span class="text-sm text-secondary">Tudo do plano Prata</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#d9b75a] to-[#f0d992] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1f1603]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Portal do cliente com login</span>
-
-
+                                <span class="text-sm text-secondary">Portal do cliente com login</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#d9b75a] to-[#f0d992] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1f1603]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Sistema de agendamento online</span>
-
-
+                                <span class="text-sm text-secondary">Sistema de agendamento online</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#d9b75a] to-[#f0d992] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1f1603]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Múltiplas integrações e APIs</span>
-
-
+                                <span class="text-sm text-secondary">Múltiplas integrações e APIs</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#d9b75a] to-[#f0d992] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1f1603]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Suporte prioritário 1 ano</span>
-
-
+                                <span class="text-sm text-secondary">Suporte prioritário 1 ano</span>
                             </div>
-
-
                             <div class="flex items-start gap-3">
-
-
-                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-yellow-400 to-amber-400 flex items-center justify-center flex-shrink-0 mt-0.5">
-
-
-                                    <svg class="w-3 h-3 text-black" fill="currentColor" viewBox="0 0 20 20">
-
-
+                                <div class="w-5 h-5 rounded-full bg-gradient-to-r from-[#d9b75a] to-[#f0d992] flex items-center justify-center flex-shrink-0 mt-0.5">
+                                    <svg class="w-3 h-3 text-[#1f1603]" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">3 anos de hospedagem grátis</span>
-
-
+                                <span class="text-sm text-secondary">3 anos de hospedagem grátis</span>
                             </div>
-
-
                         </div>
 
-
-
-
-
-                        <!-- CTA Button -->
-
-
-                        <button onclick="scrollToContact('Ouro')" class="w-full py-4 rounded-full bg-gradient-to-r from-yellow-600/20 to-amber-600/20 border border-yellow-500/30 text-yellow-400 font-semibold hover:bg-gradient-to-r hover:from-yellow-600/30 hover:to-amber-600/30 hover:border-yellow-500/50 transition-all duration-300">
-
-
+                        <button onclick="scrollToContact('Ouro')" class="w-full py-4 rounded-full bg-gradient-to-r from-[#d9b75a]/20 to-[#f0d992]/20 border border-[#d9b75a]/60 text-[#f6e1a9] font-semibold hover:from-[#d9b75a]/30 hover:to-[#f0d992]/30 hover:border-[#d9b75a]/80 transition-all duration-300">
                             Solicitar Proposta Ouro
-
-
                         </button>
-
-
                     </div>
-
-
                 </div>
-
-
             </div>
-
-
-
-
-
-            <!-- Additional info -->
-
 
             <div class="mt-20 text-center">
-
-
-                <p class="body-small text-muted mb-6">Todos os planos incluem:</p>
-
-
-                <div class="flex flex-wrap justify-center gap-6 body-small text-secondary">
-
-
+                <p class="text-sm text-muted mb-6">Todos os planos incluem:</p>
+                <div class="flex flex-wrap justify-center gap-6 text-sm text-secondary">
                     <div class="flex items-center gap-2">
-
-
                         <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-
-
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-
-
                         </svg>
-
-
-                        <span class="body-small text-secondary">Domínio próprio</span>
-
-
+                        <span>Domínio próprio</span>
                     </div>
-
-
                     <div class="flex items-center gap-2">
-
-
                         <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-
-
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-
-
                         </svg>
-
-
-                        <span class="body-small text-secondary">SSL e segurança</span>
-
-
+                        <span>SSL e segurança</span>
                     </div>
-
-
                     <div class="flex items-center gap-2">
-
-
                         <svg class="w-5 h-5 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
-
-
                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-
-
                         </svg>
-
-
-                        <span class="body-small text-secondary">Treinamento completo</span>
-
-
+                        <span>Treinamento completo</span>
                     </div>
-
-
                 </div>
-
-
             </div>
-
-
         </div>
-
-
     </section>
 
-
-
-
-
-    <!-- PORTFOLIO SECTION COM CONTEÚDO REAL -->
-
-
+    <!-- PORTFOLIO COM PREVIEWS INTERATIVOS -->
     <section class="portfolio relative py-32 overflow-hidden" id="portfolio">
-
-
         <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
-
-
         
-
-
         <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
             <div class="text-center mb-16">
-
-
                 <h2 class="portfolio-title heading-xl font-display mb-6">
-
-
                     <span class="bg-gradient-to-r from-[#f4e5b7] to-[#c9a24f] bg-clip-text text-transparent">
-
-
                         Portfolio Exclusivo
-
-
                     </span>
-
-
                 </h2>
-
-
-                <p class="portfolio-subtitle body-large text-secondary max-w-3xl mx-auto">
-
-
+                <p class="portfolio-subtitle text-lg text-secondary max-w-3xl mx-auto">
                     Conheça os 3 modelos exclusivos desenvolvidos para o Bezerra e Pacheco
-
-
                 </p>
-
-
             </div>
-
-
             
-
-
-            <!-- Portfolio Grid -->
-
-
+            <!-- Portfolio Grid com Previews -->
             <div class="space-y-24">
-
-
-                <!-- Portfolio Item 1 - Clássico -->
-
-
+                <!-- Portfolio Item 1 - Clássico Bronze -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-
                     <div class="order-2 lg:order-1">
-
-
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 mb-4">
-
-
                             <div class="w-2 h-2 bg-orange-500 rounded-full"></div>
-
-
-                            <span class="uppercase-spacing text-orange-200 text-[0.7rem]">Ideal para Bronze</span>
-
-
+                            <span class="uppercase tracking-[0.35em] text-orange-200 text-[0.7rem]">Ideal para Bronze</span>
                         </div>
-
-
                         <h3 class="heading-lg font-display text-white mb-4">Design Clássico Jurídico</h3>
-
-
-                        <p class="body-regular text-secondary mb-6">
-
-
+                        <p class="text-base text-secondary mb-6">
                             Layout tradicional que transmite seriedade e confiança. Perfeito para escritórios que buscam uma presença digital sólida e profissional sem complexidade excessiva.
-
-
                         </p>
-
-
                         
-
-
                         <div class="space-y-4 mb-8">
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Paleta de cores sóbrias e elegantes</span>
-
-
+                                <span class="text-sm text-secondary">Paleta de cores sóbrias e elegantes</span>
                             </div>
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Navegação intuitiva e organizada</span>
-
-
+                                <span class="text-sm text-secondary">Navegação intuitiva e organizada</span>
                             </div>
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Seções bem definidas para áreas de atuação</span>
-
-
+                                <span class="text-sm text-secondary">Seções bem definidas para áreas de atuação</span>
                             </div>
-
-
                         </div>
-
-
                         
-
-
-                        <button class="px-6 py-3 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 font-medium hover:bg-orange-500/20 transition-all">
-
-
+                        <a href="portfolio-classico.html" target="_blank" class="px-6 py-3 rounded-full bg-orange-500/10 border border-orange-500/30 text-orange-400 font-medium hover:bg-orange-500/20 transition-all inline-block">
                             Ver Demo ao Vivo
-
-
-                        </button>
-
-
+                        </a>
                     </div>
-
-
                     
-
-
                     <div class="order-1 lg:order-2">
-
-
-                        <div class="relative group">
-
-
+                        <div class="relative group portfolio-preview" onclick="window.open('portfolio-classico.html', '_blank')">
                             <div class="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-amber-600/20 rounded-2xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-
-
-                            <div class="relative glass-dark rounded-2xl p-2 border border-orange-500/20">
-
-
-                                <div class="bg-slate-900 rounded-xl h-96 flex items-center justify-center">
-
-
-                                    <div class="text-center">
-
-
-                                        <div class="w-20 h-20 bg-gradient-to-br from-orange-500/20 to-amber-500/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-
-
-                                            <svg class="w-10 h-10 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"></path>
-
-
-                                            </svg>
-
-
+                            <div class="relative glass-dark rounded-2xl p-2 border border-orange-500/20 overflow-hidden">
+                                <div class="bg-slate-900 rounded-xl aspect-video flex items-center justify-center overflow-hidden">
+                                    <div class="w-full h-full bg-gradient-to-br from-orange-900/20 to-amber-900/10 p-4">
+                                        <div class="bg-slate-800/50 rounded-lg p-3 mb-2">
+                                            <div class="h-2 bg-orange-400/30 rounded w-1/3 mb-2"></div>
+                                            <div class="h-1 bg-gray-600 rounded w-2/3"></div>
                                         </div>
-
-
-                                        <p class="body-small text-secondary">Preview Design Clássico</p>
-
-
+                                        <div class="grid grid-cols-3 gap-2">
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                        </div>
                                     </div>
-
-
                                 </div>
-
-
                             </div>
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
 
-
-
-
-
-                <!-- Portfolio Item 2 - Moderno -->
-
-
+                <!-- Portfolio Item 2 - Moderno Prata -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-
                     <div class="order-2">
-
-
-                        <div class="relative group">
-
-
+                        <div class="relative group portfolio-preview" onclick="window.open('portfolio-moderno.html', '_blank')">
                             <div class="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-pink-600/20 rounded-2xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-
-
-                            <div class="relative border-gradient rounded-2xl p-2">
-
-
-                                <div class="bg-slate-900 rounded-xl h-96 flex items-center justify-center">
-
-
-                                    <div class="text-center">
-
-
-                                        <div class="w-20 h-20 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-
-
-                                            <svg class="w-10 h-10 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
-
-
-                                            </svg>
-
-
+                            <div class="relative rounded-2xl p-2 border-2 border-purple-500/30 overflow-hidden glass-dark">
+                                <div class="bg-slate-900 rounded-xl aspect-video flex items-center justify-center overflow-hidden">
+                                    <div class="w-full h-full bg-gradient-to-br from-purple-900/20 to-pink-900/10 p-4">
+                                        <div class="bg-slate-800/50 rounded-lg p-3 mb-2">
+                                            <div class="h-3 bg-purple-400/30 rounded w-1/2 mb-2"></div>
+                                            <div class="h-1 bg-gray-600 rounded w-3/4"></div>
                                         </div>
-
-
-                                        <p class="body-small text-secondary">Preview Design Moderno</p>
-
-
+                                        <div class="grid grid-cols-2 gap-2">
+                                            <div class="bg-slate-800/30 rounded h-16"></div>
+                                            <div class="bg-slate-800/30 rounded h-16"></div>
+                                        </div>
                                     </div>
-
-
                                 </div>
-
-
                             </div>
-
-
                         </div>
-
-
                     </div>
-
-
                     
-
-
                     <div class="order-1">
-
-
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 mb-4">
-
-
                             <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-
-
-                            <span class="uppercase-spacing text-[#d7bb6a] text-[0.7rem]">Recomendado - Prata</span>
-
-
+                            <span class="uppercase tracking-[0.35em] text-[#d7bb6a] text-[0.7rem]">Recomendado - Prata</span>
                         </div>
-
-
                         <h3 class="heading-lg font-display text-white mb-4">Portal Jurídico Moderno</h3>
-
-
-                        <p class="body-regular text-secondary mb-6">
-
-
+                        <p class="text-base text-secondary mb-6">
                             Design contemporâneo com elementos visuais impactantes. Inclui blog integrado para marketing de conteúdo e recursos avançados para captura de leads.
-
-
                         </p>
-
-
                         
-
-
                         <div class="space-y-4 mb-8">
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
-
-
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Blog integrado com SEO otimizado</span>
-
-
+                                <span class="text-sm text-secondary">Blog integrado com SEO otimizado</span>
                             </div>
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Animações modernas e interativas</span>
-
-
+                                <span class="text-sm text-secondary">Animações modernas e interativas</span>
                             </div>
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Dashboard de métricas integrado</span>
-
-
+                                <span class="text-sm text-secondary">Dashboard de métricas integrado</span>
                             </div>
-
-
                         </div>
-
-
                         
-
-
-                        <button class="px-6 py-3 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-medium hover:bg-purple-500/20 transition-all">
-
-
+                        <a href="portfolio-moderno.html" target="_blank" class="px-6 py-3 rounded-full bg-purple-500/10 border border-purple-500/30 text-purple-400 font-medium hover:bg-purple-500/20 transition-all inline-block">
                             Ver Demo ao Vivo
-
-
-                        </button>
-
-
+                        </a>
                     </div>
-
-
                 </div>
 
-
-
-
-
-                <!-- Portfolio Item 3 - Premium -->
-
-
+                <!-- Portfolio Item 3 - Premium Ouro -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-
                     <div class="order-2 lg:order-1">
-
-
                         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-yellow-500/10 border border-yellow-500/20 mb-4">
-
-
                             <div class="w-2 h-2 bg-yellow-500 rounded-full"></div>
-
-
-                            <span class="uppercase-spacing text-amber-200 text-[0.7rem]">Premium - Ouro</span>
-
-
+                            <span class="uppercase tracking-[0.35em] text-amber-200 text-[0.7rem]">Premium - Ouro</span>
                         </div>
-
-
                         <h3 class="heading-lg font-display text-white mb-4">Plataforma Enterprise</h3>
-
-
-                        <p class="body-regular text-secondary mb-6">
-
-
+                        <p class="text-base text-secondary mb-6">
                             Sistema completo com portal do cliente, agendamento online, automação de processos e integrações avançadas. A solução mais completa para escritórios de grande porte.
-
-
                         </p>
-
-
                         
-
-
                         <div class="space-y-4 mb-8">
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Portal do cliente com área restrita</span>
-
-
+                                <span class="text-sm text-secondary">Portal do cliente com área restrita</span>
                             </div>
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Sistema de agendamento inteligente</span>
-
-
+                                <span class="text-sm text-secondary">Sistema de agendamento inteligente</span>
                             </div>
-
-
                             <div class="flex items-center gap-3">
-
-
                                 <div class="w-8 h-8 rounded-lg bg-yellow-500/10 flex items-center justify-center">
-
-
                                     <svg class="w-4 h-4 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"></path>
-
-
                                     </svg>
-
-
                                 </div>
-
-
-                                <span class="body-small text-secondary">Integrações com sistemas jurídicos</span>
-
-
+                                <span class="text-sm text-secondary">Integrações com sistemas jurídicos</span>
                             </div>
-
-
                         </div>
-
-
                         
-
-
-                        <button class="px-6 py-3 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 font-medium hover:bg-yellow-500/20 transition-all">
-
-
+                        <a href="portfolio-premium.html" target="_blank" class="px-6 py-3 rounded-full bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 font-medium hover:bg-yellow-500/20 transition-all inline-block">
                             Ver Demo ao Vivo
-
-
-                        </button>
-
-
+                        </a>
                     </div>
-
-
                     
-
-
                     <div class="order-1 lg:order-2">
-
-
-                        <div class="relative group">
-
-
+                        <div class="relative group portfolio-preview" onclick="window.open('portfolio-premium.html', '_blank')">
                             <div class="absolute inset-0 bg-gradient-to-r from-yellow-600/20 to-amber-600/20 rounded-2xl blur-2xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-
-
-                            <div class="relative glass-dark rounded-2xl p-2 border border-yellow-500/20">
-
-
-                                <div class="bg-slate-900 rounded-xl h-96 flex items-center justify-center">
-
-
-                                    <div class="text-center">
-
-
-                                        <div class="w-20 h-20 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
-
-
-                                            <svg class="w-10 h-10 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
-
-
-                                            </svg>
-
-
+                            <div class="relative glass-dark rounded-2xl p-2 border border-yellow-500/20 overflow-hidden">
+                                <div class="bg-slate-900 rounded-xl aspect-video flex items-center justify-center overflow-hidden">
+                                    <div class="w-full h-full bg-gradient-to-br from-yellow-900/20 to-amber-900/10 p-4">
+                                        <div class="bg-slate-800/50 rounded-lg p-3 mb-2">
+                                            <div class="h-3 bg-yellow-400/30 rounded w-2/5 mb-2"></div>
+                                            <div class="h-1 bg-gray-600 rounded w-4/5"></div>
                                         </div>
-
-
-                                        <p class="body-small text-secondary">Preview Design Enterprise</p>
-
-
+                                        <div class="grid grid-cols-4 gap-1">
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                            <div class="bg-slate-800/30 rounded aspect-square"></div>
+                                        </div>
                                     </div>
-
-
                                 </div>
-
-
                             </div>
-
-
                         </div>
-
-
                     </div>
-
-
                 </div>
-
-
             </div>
-
-
         </div>
-
-
     </section>
-
-
-
-
 
     <!-- SEÇÃO DE FUNCIONALIDADES DETALHADAS -->
 
@@ -2651,7 +1045,7 @@
     <section class="features relative py-32 overflow-hidden">
 
 
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-purple-950/5 to-slate-950"></div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#060a1b] via-[#0e1430] to-[#05070f]"></div>
 
 
         
@@ -2702,7 +1096,7 @@
                 <!-- Feature 1 -->
 
 
-                <div class="glass-dark rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all group">
+                <div class="feature-card group">
 
 
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -2720,7 +1114,9 @@
                     </div>
 
 
-                    <h3 class="heading-sm font-display text-white mb-2">SSL e Segurança Avançada</h3>
+                    <h3 class="heading-md font-display mb-3">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">SSL e Segurança</span> <span class="text-white">Avançada</span>
+                    </h3>
 
 
                     <p class="body-small text-muted">Certificado SSL gratuito, backup automático e proteção contra ataques DDoS.</p>
@@ -2735,7 +1131,7 @@
                 <!-- Feature 2 -->
 
 
-                <div class="glass-dark rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all group">
+                <div class="feature-card group">
 
 
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/20 to-cyan-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -2753,7 +1149,9 @@
                     </div>
 
 
-                    <h3 class="heading-sm font-display text-white mb-2">Hospedagem Cloud Premium</h3>
+                    <h3 class="heading-md font-display mb-3">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Hospedagem Cloud</span> <span class="text-white">Premium</span>
+                    </h3>
 
 
                     <p class="body-small text-muted">Servidores de alta performance com 99.9% de uptime garantido.</p>
@@ -2768,7 +1166,7 @@
                 <!-- Feature 3 -->
 
 
-                <div class="glass-dark rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all group">
+                <div class="feature-card group">
 
 
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -2786,7 +1184,9 @@
                     </div>
 
 
-                    <h3 class="heading-sm font-display text-white mb-2">Performance Otimizada</h3>
+                    <h3 class="heading-md font-display mb-3">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Performance</span> <span class="text-white">Otimizada</span>
+                    </h3>
 
 
                     <p class="body-small text-muted">Carregamento ultrarrápido com CDN global e otimização de imagens.</p>
@@ -2801,7 +1201,7 @@
                 <!-- Feature 4 -->
 
 
-                <div class="glass-dark rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all group">
+                <div class="feature-card group">
 
 
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-500/20 to-amber-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -2819,7 +1219,9 @@
                     </div>
 
 
-                    <h3 class="heading-sm font-display text-white mb-2">Painel Administrativo</h3>
+                    <h3 class="heading-md font-display mb-3">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Painel</span> <span class="text-white">Administrativo</span>
+                    </h3>
 
 
                     <p class="body-small text-muted">Gerencie todo o conteúdo do site de forma simples e intuitiva.</p>
@@ -2834,7 +1236,7 @@
                 <!-- Feature 5 -->
 
 
-                <div class="glass-dark rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all group">
+                <div class="feature-card group">
 
 
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/20 to-pink-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -2852,7 +1254,9 @@
                     </div>
 
 
-                    <h3 class="heading-sm font-display text-white mb-2">E-mails Profissionais</h3>
+                    <h3 class="heading-md font-display mb-3">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">E-mails</span> <span class="text-white">Profissionais</span>
+                    </h3>
 
 
                     <p class="body-small text-muted">Contas de e-mail ilimitadas com seu domínio @bezerraepacheco.com.br</p>
@@ -2867,7 +1271,7 @@
                 <!-- Feature 6 -->
 
 
-                <div class="glass-dark rounded-2xl p-6 border border-purple-500/10 hover:border-purple-500/30 transition-all group">
+                <div class="feature-card group">
 
 
                     <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/20 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
@@ -2885,7 +1289,9 @@
                     </div>
 
 
-                    <h3 class="heading-sm font-display text-white mb-2">Suporte Dedicado</h3>
+                    <h3 class="heading-md font-display mb-3">
+                        <span class="bg-gradient-to-r from-[#F4E5B7] via-[#D4AF37] to-[#C9A24F] bg-clip-text text-transparent">Suporte</span> <span class="text-white">Dedicado</span>
+                    </h3>
 
 
                     <p class="body-small text-muted">Equipe especializada disponível para suporte técnico e atualizações.</p>
@@ -2907,833 +1313,392 @@
 
 
     <!-- FAQ Section -->
-
-
     <section class="faq relative py-32 overflow-hidden">
-
-
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
-
-
-        
-
-
-        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
+        <div class="absolute inset-0 bg-gradient-to-br from-[#050814] via-[#0b1230] to-[#050814]"></div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-
-
-                <h2 class="heading-xl font-display mb-6">
-
-
-                    <span class="bg-gradient-to-r from-[#f4e5b7] to-[#c9a24f] bg-clip-text text-transparent">
-
-
+                <h2 class="heading-xl font-display mb-4">
+                    <span class="bg-gradient-to-r from-[#d9d7ff] via-[#f7c3ff] to-[#e2dcff] bg-clip-text text-transparent">
                         Perguntas Frequentes
-
-
                     </span>
-
-
                 </h2>
-
-
+                <p class="body-large text-secondary max-w-3xl mx-auto">
+                    Selecionamos as respostas principais para você entender como o projeto funciona do briefing ao pós-lançamento.
+                </p>
             </div>
-
-
-
-
-
-            <div class="space-y-4">
-
-
-                <div class="faq-item glass-dark rounded-xl p-6 border border-purple-500/10">
-
-
-                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFaq(this)">
-
-
-                        <span class="heading-sm font-display text-white">Quanto tempo leva para o site ficar pronto?</span>
-
-
-                        <svg class="w-5 h-5 text-purple-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-
-
-                        </svg>
-
-
-                    </button>
-
-
-                    <div class="mt-4 body-small text-secondary hidden">
-
-
-                        O prazo varia conforme o plano escolhido: Bronze (15 dias), Prata (25 dias), Ouro (35 dias). Estes prazos começam a contar após a aprovação do layout e recebimento de todo o conteúdo necessário.
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <div class="faq-item glass-dark rounded-xl p-6 border border-purple-500/10">
-
-
-                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFaq(this)">
-
-
-                        <span class="heading-sm font-display text-white">O site será otimizado para mobile?</span>
-
-
-                        <svg class="w-5 h-5 text-purple-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-
-
-                        </svg>
-
-
-                    </button>
-
-
-                    <div class="mt-4 body-small text-secondary hidden">
-
-
-                        Sim! Todos os nossos sites são 100% responsivos e otimizados para funcionar perfeitamente em smartphones, tablets e desktops. Testamos em todos os principais navegadores e dispositivos.
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <div class="faq-item glass-dark rounded-xl p-6 border border-purple-500/10">
-
-
-                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFaq(this)">
-
-
-                        <span class="heading-sm font-display text-white">Posso fazer alterações no site depois de pronto?</span>
-
-
-                        <svg class="w-5 h-5 text-purple-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-
-
-                        </svg>
-
-
-                    </button>
-
-
-                    <div class="mt-4 body-small text-secondary hidden">
-
-
-                        Sim! Fornecemos um painel administrativo intuitivo onde você poderá atualizar textos, imagens, adicionar artigos no blog e muito mais. Também oferecemos treinamento completo para sua equipe.
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <div class="faq-item glass-dark rounded-xl p-6 border border-purple-500/10">
-
-
-                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFaq(this)">
-
-
-                        <span class="heading-sm font-display text-white">O que está incluído na hospedagem?</span>
-
-
-                        <svg class="w-5 h-5 text-purple-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-
-
-                        </svg>
-
-
-                    </button>
-
-
-                    <div class="mt-4 body-small text-secondary hidden">
-
-
-                        A hospedagem inclui: servidor cloud de alta performance, certificado SSL, backup diário automático, proteção contra DDoS, suporte técnico 24/7 e garantia de 99.9% de uptime.
-
-
-                    </div>
-
-
-                </div>
-
-
-
-
-
-                <div class="faq-item glass-dark rounded-xl p-6 border border-purple-500/10">
-
-
-                    <button class="w-full text-left flex items-center justify-between" onclick="toggleFaq(this)">
-
-
-                        <span class="heading-sm font-display text-white">Vocês oferecem suporte após o lançamento?</span>
-
-
-                        <svg class="w-5 h-5 text-purple-400 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-
-
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-
-
-                        </svg>
-
-
-                    </button>
-
-
-                    <div class="mt-4 body-small text-secondary hidden">
-
-
-                        Sim! Oferecemos suporte técnico completo. O plano Bronze inclui 30 dias de suporte, o Prata 60 dias, e o Ouro tem suporte prioritário por 1 ano. Após esse período, oferecemos planos de manutenção mensal.
-
-
-                    </div>
-
-
-                </div>
-
-
+            <div class="space-y-6">
+                <article class="faq-card">
+                    <h3 class="heading-sm font-display text-white mb-3">Quanto tempo leva para o site ficar pronto?</h3>
+                    <p>O prazo varia conforme o plano escolhido: Bronze (15 dias), Prata (25 dias) e Ouro (35 dias). Os prazos contam após a aprovação do layout e recebimento de todo o conteúdo.</p>
+                </article>
+                <article class="faq-card">
+                    <h3 class="heading-sm font-display text-white mb-3">O site será otimizado para mobile?</h3>
+                    <p>Sim. Todos os sites são 100% responsivos, testados nos principais navegadores e dispositivos para garantir performance e usabilidade impecáveis.</p>
+                </article>
+                <article class="faq-card">
+                    <h3 class="heading-sm font-display text-white mb-3">Posso fazer alterações depois do lançamento?</h3>
+                    <p>Você recebe um painel administrativo intuitivo, treinamento da equipe e documentação para atualizar textos, imagens e conteúdos do blog com autonomia.</p>
+                </article>
+                <article class="faq-card">
+                    <h3 class="heading-sm font-display text-white mb-3">O que está incluído na hospedagem?</h3>
+                    <p>Hospedagem cloud de alta performance, certificado SSL, backup diário automático, proteção contra DDoS, monitoramento 24/7 e garantia de 99,9% de disponibilidade.</p>
+                </article>
+                <article class="faq-card">
+                    <h3 class="heading-sm font-display text-white mb-3">Vocês oferecem suporte após o lançamento?</h3>
+                    <p>Sim. Plano Bronze inclui 30 dias de suporte, Prata 60 dias e Ouro 12 meses com atendimento prioritário. Também oferecemos planos de manutenção contínua.</p>
+                </article>
             </div>
-
-
         </div>
-
-
     </section>
-
-
-
-
 
     <!-- Final CTA Section -->
-
-
     <section class="final-cta relative py-32 overflow-hidden" id="contact">
-
-
-        <div class="absolute inset-0 gradient-animated opacity-10"></div>
-
-
-        <div class="absolute inset-0 bg-gradient-to-b from-slate-950 via-purple-950/20 to-slate-950"></div>
-
-
-        
-
-
+        <div class="absolute inset-0 bg-gradient-to-br from-[#050814] via-[#111b3a] to-[#050814]"></div>
         <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
-
-
-            <h2 class="cta-title heading-xl font-display mb-6">
-
-
-                <span class="bg-gradient-to-r from-[#f4e5b7] via-[#c9a24f] to-[#d7bb6a] bg-clip-text text-transparent">
-
-
+            <h2 class="cta-title heading-xl font-display mb-4">
+                <span class="bg-gradient-to-r from-[#d9d7ff] via-[#f7c3ff] to-[#e2dcff] bg-clip-text text-transparent">
                     Pronto para Transformar seu Escritório?
-
-
                 </span>
-
-
             </h2>
-
-
-            <p class="cta-subtitle body-large text-secondary mb-12">
-
-
-                Entre em contato agora e receba uma consultoria gratuita sobre a melhor solução para o Bezerra e Pacheco
-
-
+            <p class="cta-subtitle body-large text-slate-200 mb-6">
+                Agende uma consultoria de 30 minutos e receba o roteiro completo para a nova presença digital do Bezerra &amp; Pacheco.
             </p>
-
-
             
-
-
-            <button onclick="agendarReuniao()" class="group relative px-12 py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full font-display uppercase-spacing text-white text-base shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">
-
-
-                <span class="relative z-10">Solicitar Proposta Detalhada</span>
-
-
-                <div class="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full blur-xl opacity-50 group-hover:opacity-75 transition-opacity"></div>
-
-
-            </button>
-
-
-            
-
-
-            <div class="mt-8 flex justify-center gap-8 body-small text-muted">
-
-
-                <div class="flex items-center gap-2">
-
-
-                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-
-
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-
-
-                    </svg>
-
-
-                    <span>Resposta em 24h</span>
-
-
-                </div>
-
-
-                <div class="flex items-center gap-2">
-
-
-                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-
-
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-
-
-                    </svg>
-
-
-                    <span>Sem compromisso</span>
-
-
-                </div>
-
-
-                <div class="flex items-center gap-2">
-
-
-                    <svg class="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-
-
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-
-
-                    </svg>
-
-
-                    <span>Consultoria gratuita</span>
-
-
-                </div>
-
-
+            <!-- Urgência Final -->
+            <div class="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-red-500/10 border border-red-400/30 mb-10 scarcity-badge">
+                <svg class="w-5 h-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-sm font-semibold text-red-300">Proposta válida até <span id="deadline-date"></span></span>
             </div>
-
-
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#pricing" class="group relative inline-flex items-center gap-2 px-12 py-4 bg-gradient-to-r from-[#8b5cf6] via-[#ec4899] to-[#f472b6] rounded-full font-semibold text-slate-900 text-lg shadow-2xl hover:shadow-indigo-400/40 transition-all duration-300 hover:scale-105">
+                    <span class="relative z-10">Solicitar Proposta Detalhada</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-[#8b5cf6] via-[#ec4899] to-[#f472b6] rounded-full blur-xl opacity-50 group-hover:opacity-80 transition-opacity"></div>
+                </a>
+            </div>
+            <div class="mt-8 flex flex-wrap justify-center gap-6 text-sm text-slate-300">
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Resposta em até 24h</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Sem compromisso</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    <span>Consultoria gratuita</span>
+                </div>
+            </div>
         </div>
-
-
     </section>
 
-
-
-
-
     <!-- Footer -->
-
-
     <footer class="relative py-12 border-t border-gray-800">
-
-
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
             <div class="text-center">
-
-
-                <p class="body-small text-muted">
-
-
+                <p class="text-sm text-muted">
                     © 2024 Proposta desenvolvida exclusivamente para Bezerra e Pacheco Advogados
-
-
                 </p>
-
-
-                <p class="body-small text-muted mt-2">
-
-
-                    Desenvolvido com â¤ï¸ por sua equipe de desenvolvimento web
-
-
+                <p class="text-sm text-muted mt-2">
+                    Desenvolvido com ❤️ por Weriqui Ferreira
                 </p>
-
-
             </div>
-
-
         </div>
-
-
     </footer>
 
-
-
-
-
     <!-- GSAP e ScrollTrigger -->
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-
     
-
-
     <script>
-
-
-        // Registrar o plugin ScrollTrigger
-
-
         gsap.registerPlugin(ScrollTrigger);
 
-
-
-
-
-        // Aguardar o DOM carregar completamente
-
-
         document.addEventListener('DOMContentLoaded', function() {
-
-
             
-
-
-            // Função para inicializar as animações
-
-
             function initAnimations() {
-
-
-                // Animação do Hero
-
-
-                gsap.from(".hero-title", {
-
-
-                    duration: 1.2,
-
-
-                    y: 60,
-
-
+                // Esconder conteúdo do hero inicialmente
+                gsap.set([".hero-title", ".hero-subtitle", ".hero-buttons"], {
                     opacity: 0,
-
-
-                    ease: "power3.out"
-
-
+                    y: 40
                 });
 
+                // Animação do Logo Hero
+                const logoTimeline = gsap.timeline({ 
+                    defaults: { ease: "power3.out" },
+                    onComplete: animateHeroContent // Anima o conteúdo quando o logo terminar
+                });
 
+                logoTimeline.from(".logo-hero-wrapper", {
+                    duration: 1.5,
+                    scale: 0.3,
+                    opacity: 0,
+                    rotation: -15,
+                    ease: "elastic.out(1, 0.5)"
+                })
                 
-
-
-                gsap.from(".hero-subtitle", {
-
-
-                    duration: 1.2,
-
-
-                    y: 40,
-
-
+                .from(".letter", {
+                    duration: 0.8,
                     opacity: 0,
-
-
-                    delay: 0.3,
-
-
-                    ease: "power3.out"
-
-
-                });
-
-
+                    y: 50,
+                    stagger: {
+                        each: 0.03,
+                        from: "start"
+                    },
+                    ease: "back.out(1.2)"
+                }, "-=0.8")
                 
-
-
-                gsap.from(".hero-buttons", {
-
-
-                    duration: 1.2,
-
-
-                    y: 40,
-
-
+                .from(".divider", {
+                    duration: 0.6,
+                    scaleX: 0,
+                    transformOrigin: "center center",
+                    ease: "power2.out"
+                }, "-=0.4")
+                
+                .from(".ampersand", {
+                    duration: 0.8,
+                    scale: 0,
+                    rotation: 360,
+                    transformOrigin: "center center",
+                    ease: "back.out(1.7)"
+                }, "-=0.3")
+                
+                .from(".circle-1", {
+                    duration: 1.5,
+                    scale: 0,
                     opacity: 0,
+                    ease: "power2.out"
+                }, "-=1")
+                
+                .from(".circle-2", {
+                    duration: 1.8,
+                    scale: 0,
+                    opacity: 0,
+                    ease: "power2.out"
+                }, "-=1.3")
+                
+                .from(".sparkle", {
+                    duration: 0.6,
+                    scale: 0,
+                    opacity: 0,
+                    stagger: 0.1,
+                    ease: "back.out(2)"
+                }, "-=0.8")
+                
+                .from(".logo-badge", {
+                    duration: 0.8,
+                    x: 50,
+                    y: -50,
+                    opacity: 0,
+                    rotation: 15,
+                    ease: "back.out(1.7)"
+                }, "-=0.5");
 
+                // Função para animar conteúdo do hero após logo
+                function animateHeroContent() {
+                    const contentTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
+                    
+                    contentTimeline
+                        .to(".hero-title", {
+                            duration: 1.2,
+                            y: 0,
+                            opacity: 1
+                        })
+                        .to(".hero-subtitle", {
+                            duration: 1.2,
+                            y: 0,
+                            opacity: 1
+                        }, "-=0.8")
+                        .to(".hero-buttons", {
+                            duration: 1.2,
+                            y: 0,
+                            opacity: 1
+                        }, "-=0.8");
+                }
 
-                    delay: 0.5,
-
-
-                    ease: "power3.out"
-
-
+                // Animações contínuas do logo
+                gsap.to(".sparkle", {
+                    scale: 1.5,
+                    opacity: 0.3,
+                    duration: 1.5,
+                    stagger: {
+                        each: 0.3,
+                        repeat: -1,
+                        yoyo: true
+                    },
+                    ease: "power1.inOut"
                 });
 
+                gsap.to(".circle-1", {
+                    rotation: 360,
+                    duration: 40,
+                    repeat: -1,
+                    ease: "none"
+                });
 
+                gsap.to(".circle-2", {
+                    rotation: -360,
+                    duration: 50,
+                    repeat: -1,
+                    ease: "none"
+                });
 
+                gsap.to(".logo-hero-wrapper", {
+                    filter: "drop-shadow(0 0 60px rgba(201, 162, 79, 0.4))",
+                    duration: 2,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "power1.inOut"
+                });
 
+                gsap.to(".logo-badge", {
+                    scale: 1.05,
+                    duration: 1.5,
+                    repeat: -1,
+                    yoyo: true,
+                    ease: "power1.inOut"
+                });
 
-                // Animação dos títulos das seções
-
-
+                // Animações com scroll trigger
                 gsap.utils.toArray([".pricing-title", ".portfolio-title"]).forEach(title => {
-
-
                     gsap.from(title, {
-
-
                         scrollTrigger: {
-
-
                             trigger: title,
-
-
                             start: "top 85%",
-
-
                             toggleActions: "play none none none"
-
-
                         },
-
-
                         duration: 1,
-
-
                         y: 40,
-
-
                         opacity: 0,
-
-
                         ease: "power3.out"
-
-
                     });
-
-
                 });
-
-
-
-
-
-                // Animação dos cards com stagger
-
 
                 gsap.utils.toArray(".animate-card").forEach((card, index) => {
-
-
                     gsap.from(card, {
-
-
                         scrollTrigger: {
-
-
                             trigger: card,
-
-
                             start: "top 85%",
-
-
                             toggleActions: "play none none none"
-
-
                         },
-
-
                         duration: 0.8,
-
-
                         y: 60,
-
-
                         opacity: 0,
-
-
                         scale: 0.95,
-
-
                         delay: index * 0.1,
-
-
                         ease: "power3.out"
-
-
                     });
-
-
                 });
-
-
-
-
-
-                // Animação do CTA final
-
 
                 gsap.from(".cta-title", {
-
-
                     scrollTrigger: {
-
-
                         trigger: ".final-cta",
-
-
                         start: "top 80%",
-
-
                         toggleActions: "play none none none"
-
-
                     },
-
-
                     duration: 1,
-
-
                     y: 50,
-
-
                     opacity: 0,
-
-
                     ease: "power3.out"
-
-
                 });
-
-
-
-
 
                 gsap.from(".cta-subtitle", {
-
-
                     scrollTrigger: {
-
-
                         trigger: ".final-cta",
-
-
                         start: "top 80%",
-
-
                         toggleActions: "play none none none"
-
-
                     },
-
-
                     duration: 1,
-
-
                     y: 30,
-
-
                     opacity: 0,
-
-
                     delay: 0.2,
-
-
                     ease: "power3.out"
-
-
                 });
-
-
             }
-
-
-
-
-
-            // Inicializar animações após um pequeno delay
-
 
             setTimeout(initAnimations, 100);
 
-
-
-
-
-            // Refresh ScrollTrigger quando a página carregar completamente
-
-
             window.addEventListener('load', () => {
-
-
                 ScrollTrigger.refresh();
-
-
             });
-
-
         });
 
-
-
-
-
-        // Funções auxiliares
-
-
         function scrollToContact(plano) {
-
-
             sessionStorage.setItem('planoSelecionado', plano);
-
-
             
-
-
-            document.getElementById('contact').scrollIntoView({
-
-
-                behavior: 'smooth',
-
-
-                block: 'center'
-
-
-            });
-
-
+            const mensagem = `Olá! Gostaria de receber a proposta detalhada para o site do Bezerra e Pacheco. Tenho interesse no Plano ${plano}.`;
+            const numeroWhatsApp = '5548992033200';
+            const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            
+            window.open(urlWhatsApp, '_blank');
         }
-
-
-
-
 
         function agendarReuniao() {
-
-
             const plano = sessionStorage.getItem('planoSelecionado') || 'Não especificado';
-
-
             
-
-
             const mensagem = `Olá! Gostaria de receber a proposta detalhada para o site do Bezerra e Pacheco. Tenho interesse no Plano ${plano}.`;
-
-
-            const numeroWhatsApp = '5511999999999'; // Substitua pelo número real
-
-
+            const numeroWhatsApp = '5548992033200';
             const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
-
-
             
-
-
-            // window.open(urlWhatsApp, '_blank');
-
-
-            
-
-
-            alert(`Obrigado pelo interesse! Enviaremos a proposta detalhada em até 24 horas.\nPlano selecionado: ${plano}`);
-
-
+            window.open(urlWhatsApp, '_blank');
         }
 
-
-
-
-
-        // Toggle FAQ
-
-
-        function toggleFaq(button) {
-
-
-            const content = button.nextElementSibling;
-
-
-            const icon = button.querySelector('svg');
-
-
+        // Countdown Timer (Escassez Temporal)
+        function initCountdown() {
+            const deadline = new Date();
+            deadline.setDate(deadline.getDate() + 7); // 7 dias a partir de hoje
             
-
-
-            if (content.classList.contains('hidden')) {
-
-
-                content.classList.remove('hidden');
-
-
-                icon.classList.add('rotate-180');
-
-
-            } else {
-
-
-                content.classList.add('hidden');
-
-
-                icon.classList.remove('rotate-180');
-
-
+            // Formatar data de deadline
+            const deadlineStr = deadline.toLocaleDateString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' });
+            const deadlineElement = document.getElementById('deadline-date');
+            if (deadlineElement) {
+                deadlineElement.textContent = deadlineStr;
             }
-
-
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = deadline - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                
+                const daysEl = document.getElementById('days');
+                const hoursEl = document.getElementById('hours');
+                const minutesEl = document.getElementById('minutes');
+                
+                if (daysEl) daysEl.textContent = String(days).padStart(2, '0');
+                if (hoursEl) hoursEl.textContent = String(hours).padStart(2, '0');
+                if (minutesEl) minutesEl.textContent = String(minutes).padStart(2, '0');
+                
+                if (distance < 0) {
+                    if (daysEl) daysEl.textContent = '00';
+                    if (hoursEl) hoursEl.textContent = '00';
+                    if (minutesEl) minutesEl.textContent = '00';
+                }
+            }
+            
+            updateCountdown();
+            setInterval(updateCountdown, 60000); // Atualiza a cada minuto
         }
-
+        
+        // Inicializar countdown quando página carregar
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCountdown);
+        } else {
+            initCountdown();
+        }
 
     </script>
-
-
 </body>
-
-
 </html>
 
 

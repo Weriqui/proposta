@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezerra & Pacheco | Vitrine Plano Bronze</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            color-scheme: dark;
+            --navy-900: #020618;
+            --navy-800: #07122e;
+            --navy-700: #0f1d43;
+            --bronze-500: #c58a3d;
+            --bronze-400: #d4a257;
+            --bronze-300: #e1bb7b;
+            --text-strong: #f8fafc;
+            --text-soft: #cbd5e1;
+            --text-muted: #94a3b8;
+        }
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: radial-gradient(120% 120% at 10% 10%, rgba(197,138,61,0.08), transparent 55%),
+                        radial-gradient(120% 120% at 90% 20%, rgba(41,83,143,0.18), transparent 60%),
+                        var(--navy-900);
+            color: var(--text-strong);
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.02em;
+        }
+        .section-shell {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        .glass-card {
+            background: rgba(9, 17, 40, 0.62);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 22px;
+            box-shadow: 0 30px 70px rgba(5, 12, 30, 0.45);
+            backdrop-filter: blur(24px);
+        }
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(197,138,61,0.45), transparent);
+        }
+        .feature-item {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="antialiased text-base">
+    <header class="sticky top-0 z-40 backdrop-blur bg-slate-950/80 border-b border-white/5">
+        <div class="section-shell flex items-center justify-between py-4">
+            <div class="flex items-center gap-3">
+                <div class="h-11 w-11 rounded-full bg-gradient-to-br from-amber-500/40 to-amber-300/10 flex items-center justify-center text-amber-300 font-semibold">BP</div>
+                <div>
+                    <p class="uppercase tracking-[0.35em] text-xs text-amber-300">Bezerra & Pacheco</p>
+                    <p class="text-lg font-semibold text-white">Plano Bronze · Presença Clássica</p>
+                </div>
+            </div>
+            <a href="#contato" class="inline-flex items-center gap-2 rounded-full border border-amber-400/40 px-5 py-2 text-sm font-semibold text-amber-200 hover:bg-amber-400/10 transition">
+                Agendar conversa
+                <span class="text-amber-300">→</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="pb-24">
+        <section class="section-shell pt-20 pb-16 grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-14 items-center">
+            <div class="hero-content">
+                <span class="uppercase tracking-[0.5em] text-xs text-amber-300">Plano Bronze</span>
+                <h1 class="mt-4 text-5xl lg:text-6xl font-semibold leading-tight text-white">
+                    Autoridade discreta para conquistar confiança desde o primeiro contato
+                </h1>
+                <p class="mt-6 text-lg text-slate-300">
+                    Website institucional focado em transmitir tradição, clareza de serviços e acessibilidade. Ideal para escritórios que precisam estruturar presença digital sem perder elegância.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#estrutura" class="rounded-full bg-amber-400/20 text-amber-200 px-6 py-3 text-sm font-semibold border border-amber-400/50 hover:bg-amber-400/30 transition">Ver estrutura completa</a>
+                    <a href="#contato" class="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 hover:bg-white/10 transition">Solicitar proposta</a>
+                </div>
+                <dl class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-slate-300">
+                    <div>
+                        <dt class="uppercase tracking-[0.25em] text-amber-300 text-xs">Prazo médio</dt>
+                        <dd class="mt-2 text-xl font-semibold text-white">15 dias úteis</dd>
+                    </div>
+                    <div>
+                        <dt class="uppercase tracking-[0.25em] text-amber-300 text-xs">Sessões entregues</dt>
+                        <dd class="mt-2 text-xl font-semibold text-white">Até 6 páginas</dd>
+                    </div>
+                    <div>
+                        <dt class="uppercase tracking-[0.25em] text-amber-300 text-xs">Integrado</dt>
+                        <dd class="mt-2 text-xl font-semibold text-white">WhatsApp · Forms</dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="glass-card overflow-hidden hero-image">
+                <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Sala de reunião" class="h-80 w-full object-cover" />
+                <div class="p-8">
+                    <h2 class="text-2xl font-semibold text-white">Layout organizado e mensagem objetiva</h2>
+                    <p class="mt-4 text-sm text-slate-300">
+                        Hero com headline forte, chamada para consulta, mapa de áreas de atuação e depoimentos selecionados. Estrutura pensada para destacar credibilidade e convidar ao contato imediato.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider section-shell"></div>
+
+        <section id="estrutura" class="section-shell py-16">
+            <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+                <div class="max-w-xl">
+                    <h2 class="text-4xl font-semibold text-white">Estrutura do site</h2>
+                    <p class="mt-4 text-slate-300">
+                        Navegação enxuta, com conteúdo essencial para responder dúvidas frequentes e valorizar diferenciais do escritório.
+                    </p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="rounded-full border border-amber-300/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-amber-200">SEO básico</span>
+                    <span class="rounded-full border border-amber-300/40 px-4 py-2 text-xs uppercase tracking-[0.3em] text-amber-200">Responsivo</span>
+                </div>
+            </div>
+
+            <div class="mt-12 grid gap-8 md:grid-cols-2">
+                <article class="glass-card p-8 feature-item">
+                    <h3 class="text-2xl font-semibold text-white">Página Inicial</h3>
+                    <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                        <li>• Banner principal com destaque para o escritório</li>
+                        <li>• Apresentação das principais áreas de atuação</li>
+                        <li>• Seção "Sobre o escritório" com credenciais</li>
+                        <li>• Chamada para contato e consulta</li>
+                    </ul>
+                </article>
+                <article class="glass-card p-8 feature-item">
+                    <h3 class="text-2xl font-semibold text-white">Página Sobre & Equipe</h3>
+                    <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                        <li>• História e valores do escritório</li>
+                        <li>• Apresentação dos advogados principais</li>
+                        <li>• Experiência e formação da equipe</li>
+                        <li>• Links para contato direto</li>
+                    </ul>
+                </article>
+                <article class="glass-card p-8 feature-item">
+                    <h3 class="text-2xl font-semibold text-white">Áreas de Atuação</h3>
+                    <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                        <li>• Listagem clara das especialidades jurídicas</li>
+                        <li>• Descrição básica de cada área</li>
+                        <li>• Exemplos de casos tratados</li>
+                    </ul>
+                </article>
+                <article class="glass-card p-8 feature-item">
+                    <h3 class="text-2xl font-semibold text-white">Contato</h3>
+                    <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                        <li>• Formulário de contato básico</li>
+                        <li>• Endereço e informações de localização</li>
+                        <li>• Telefone e WhatsApp para contato direto</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell py-16">
+            <div class="glass-card p-10">
+                <div class="flex flex-col lg:flex-row lg:items-center gap-10">
+                    <div class="lg:w-1/2">
+                        <h2 class="text-4xl font-semibold text-white">Resultados em até 90 dias</h2>
+                        <p class="mt-4 text-slate-300">
+                            Site otimizado para aparecer no Google, formulário de contato funcional e integração com WhatsApp para facilitar o primeiro contato dos clientes.
+                        </p>
+                        <div class="mt-8 grid gap-6 sm:grid-cols-2 text-sm text-slate-200">
+                            <div>
+                                <p class="text-3xl font-semibold text-white">5 páginas</p>
+                                <p class="text-slate-400">Site completo e responsivo</p>
+                            </div>
+                            <div>
+                                <p class="text-3xl font-semibold text-white">15 dias</p>
+                                <p class="text-slate-400">Prazo de entrega do projeto</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:w-1/2 space-y-6">
+                        <div class="rounded-2xl border border-white/10 p-6 bg-white/[0.02]">
+                            <h4 class="text-lg font-semibold text-white mb-3">O que você recebe:</h4>
+                            <ul class="space-y-2 text-sm text-slate-200">
+                                <li>• Site responsivo com até 5 páginas</li>
+                                <li>• Design profissional e elegante</li>
+                                <li>• Formulário de contato funcional</li>
+                                <li>• SEO básico configurado</li>
+                                <li>• 1 ano de hospedagem incluído</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="section-shell py-16">
+            <div class="glass-card p-10">
+                <div class="grid gap-8 md:grid-cols-[1.1fr_0.9fr] items-center">
+                    <div>
+                        <span class="uppercase tracking-[0.4em] text-xs text-amber-300">Próximos passos</span>
+                        <h2 class="mt-4 text-4xl font-semibold text-white">Vamos preparar o roteiro do seu projeto Bronze?</h2>
+                        <p class="mt-4 text-slate-300">Em 30 minutos alinhamos expectativas, coletamos informações essenciais e entregamos cronograma detalhado.</p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-200">
+                            <li>• Reunião inicial para entender suas necessidades</li>
+                            <li>• Proposta detalhada e cronograma</li>
+                            <li>• Aprovação do layout antes do desenvolvimento</li>
+                        </ul>
+                    </div>
+                    <form class="space-y-4">
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <input type="text" placeholder="Nome completo" class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 focus:border-amber-400 focus:outline-none" />
+                            <input type="email" placeholder="E-mail corporativo" class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 focus:border-amber-400 focus:outline-none" />
+                        </div>
+                        <input type="tel" placeholder="Telefone/WhatsApp" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 focus:border-amber-400 focus:outline-none" />
+                        <textarea rows="4" placeholder="Contexto do projeto" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-slate-400 focus:border-amber-400 focus:outline-none"></textarea>
+                        <button type="button" class="w-full rounded-full bg-gradient-to-r from-amber-500 to-amber-400 py-3 text-sm font-semibold text-navy-900 hover:from-amber-400 hover:to-amber-300 transition">Quero a proposta detalhada</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-slate-500">
+        © 2024 Bezerra & Pacheco · Plano Bronze apresentado pela equipe digital
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Garantir que todos os elementos estejam visíveis
+            const featureItems = document.querySelectorAll('.feature-item');
+            featureItems.forEach(item => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            });
+
+            // Hero animations
+            gsap.from('.hero-content', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.hero-image', {
+                duration: 1,
+                x: 50,
+                opacity: 0,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+
+            // Feature items staggered animation com fallback
+            if (featureItems.length > 0) {
+                // Reset para animação
+                featureItems.forEach(item => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(40px)';
+                });
+
+                gsap.from(featureItems, {
+                    scrollTrigger: {
+                        trigger: '#estrutura',
+                        start: 'top 80%'
+                    },
+                    duration: 0.8,
+                    y: 40,
+                    opacity: 0,
+                    stagger: 0.2,
+                    ease: 'power3.out'
+                });
+
+                // Fallback: garantir visibilidade após 3 segundos
+                setTimeout(() => {
+                    featureItems.forEach(item => {
+                        if (item.style.opacity === '0') {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }
+                    });
+                }, 3000);
+            }
+        });
+    </script>
+</body>
+</html>

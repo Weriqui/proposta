@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bezerra & Pacheco | Vitrine Plano Prata</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        :root {
+            color-scheme: dark;
+            --night-900: #010516;
+            --night-800: #07112c;
+            --night-700: #101e40;
+            --prata-500: #9faef2;
+            --prata-400: #b7c5ff;
+            --prata-300: #d3dcff;
+            --text-strong: #f8fbff;
+            --text-soft: #cbd5f5;
+            --text-muted: #8c98c7;
+        }
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background: radial-gradient(120% 140% at 15% 15%, rgba(159,174,242,0.16), transparent 60%),
+                        radial-gradient(120% 140% at 85% 25%, rgba(103,114,227,0.22), transparent 65%),
+                        var(--night-900);
+            color: var(--text-strong);
+            line-height: 1.7;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.015em;
+        }
+        .container-shell {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 1.75rem;
+        }
+        .panel {
+            background: linear-gradient(140deg, rgba(18, 29, 66, 0.9), rgba(7, 16, 44, 0.9));
+            border: 1px solid rgba(188, 199, 255, 0.08);
+            border-radius: 26px;
+            box-shadow: 0 38px 85px rgba(8, 17, 43, 0.55);
+            backdrop-filter: blur(26px);
+        }
+        .badge {
+            letter-spacing: 0.35em;
+        }
+        .journey-card {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.3s ease;
+        }
+        .feature-highlight {
+            transition: all 0.3s ease;
+        }
+        .feature-highlight:hover {
+            transform: translateY(-5px);
+            border-color: rgba(159, 174, 242, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased text-base">
+    <header class="sticky top-0 z-40 backdrop-blur bg-slate-950/75 border-b border-white/5">
+        <div class="container-shell flex items-center justify-between py-4">
+            <div class="flex items-center gap-3">
+                <div class="h-11 w-11 rounded-full bg-gradient-to-br from-indigo-400/40 to-slate-100/10 flex items-center justify-center text-indigo-200 font-semibold">BP</div>
+                <div>
+                    <p class="badge uppercase text-[10px] text-indigo-200">Bezerra & Pacheco</p>
+                    <p class="text-lg font-semibold text-white">Plano Prata · Presença Dinâmica</p>
+                </div>
+            </div>
+            <a href="#contato" class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-indigo-400/30 to-blue-500/30 px-6 py-2 text-sm font-semibold text-indigo-100 border border-indigo-300/50 hover:from-indigo-400/40 hover:to-blue-500/40 transition">
+                Planejar workshop digital
+                <span class="text-indigo-200">→</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="pb-24">
+        <section class="container-shell pt-20 pb-18 grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-16 items-center">
+            <div class="hero-content">
+                <span class="badge uppercase text-xs text-indigo-200">Plano Prata</span>
+                <h1 class="mt-4 text-5xl lg:text-6xl font-semibold leading-tight text-white">
+                    Plataforma moderna para atrair, nutrir e converter clientes jurídicos com inteligência
+                </h1>
+                <p class="mt-6 text-lg text-slate-200">
+                    Website com arquitetura modular, blog integrado e automações leves. Produzimos uma jornada digital completa para escritórios que buscam crescimento nacional.
+                </p>
+                <div class="mt-8 flex flex-wrap gap-4">
+                    <a href="#journey" class="rounded-full bg-indigo-400/20 text-indigo-100 px-6 py-3 text-sm font-semibold border border-indigo-300/60 hover:bg-indigo-400/30 transition">Explorar jornada do usuário</a>
+                    <a href="#contato" class="rounded-full border border-white/10 px-6 py-3 text-sm font-semibold text-slate-200 hover:bg-white/10 transition">Solicitar diagnóstico</a>
+                </div>
+                <div class="mt-10 grid gap-6 sm:grid-cols-3 text-sm text-slate-300">
+                    <div>
+                        <p class="badge uppercase text-xs text-indigo-300">Prazo médio</p>
+                        <p class="mt-2 text-xl font-semibold text-white">25 dias úteis</p>
+                    </div>
+                    <div>
+                        <p class="badge uppercase text-xs text-indigo-300">Conteúdo</p>
+                        <p class="mt-2 text-xl font-semibold text-white">Até 10 páginas + blog</p>
+                    </div>
+                    <div>
+                        <p class="badge uppercase text-xs text-indigo-300">Automação</p>
+                        <p class="mt-2 text-xl font-semibold text-white">E-mail · CRM · Analytics</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel overflow-hidden hero-image">
+                <img src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1040&q=80" alt="Equipe digital" class="h-80 w-full object-cover" />
+                <div class="p-9 space-y-4">
+                    <h2 class="text-2xl font-semibold text-white">Experiência interativa</h2>
+                    <p class="text-sm text-slate-200">
+                        Linha do tempo animada, cards com hover, comparativo de serviços e métricas em tempo real. O layout foi pensado para entregar dinamismo sem perder a sobriedade jurídica.
+                    </p>
+                    <div class="flex gap-6 text-xs text-indigo-100">
+                        <span class="badge">Design responsivo</span>
+                        <span class="badge">Blog otimizado</span>
+                        <span class="badge">Formulário progressivo</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-shell py-14">
+            <div class="panel p-9">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
+                    <div>
+                        <h2 class="text-4xl font-semibold text-white">Jornada digital completa</h2>
+                        <p class="mt-3 text-slate-200 max-w-2xl">
+                            Mapeamos cada etapa da experiência do usuário, da primeira visita ao acompanhamento pós-consulta. Ideal para escritórios que precisam de previsibilidade na geração de demanda.
+                        </p>
+                    </div>
+                    <div class="inline-flex items-center gap-2 rounded-full border border-indigo-200/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-indigo-100">Layout personalizado</div>
+                </div>
+                <div id="journey" class="mt-10 grid gap-6 md:grid-cols-3">
+                    <article class="rounded-2xl border border-indigo-200/20 bg-white/[0.03] p-6 journey-card feature-highlight">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-indigo-500/20 to-blue-500/20 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Captura</h3>
+                        <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                            <li>• Páginas otimizadas para cada área de atuação</li>
+                            <li>• Blog integrado com sistema de gestão</li>
+                            <li>• Formulários de contato personalizados</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-2xl border border-indigo-200/20 bg-white/[0.03] p-6 journey-card feature-highlight">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Nutrição</h3>
+                        <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                            <li>• Newsletter automática com conteúdo jurídico</li>
+                            <li>• Blog com artigos especializados</li>
+                            <li>• Sistema de e-mail marketing básico</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-2xl border border-indigo-200/20 bg-white/[0.03] p-6 journey-card feature-highlight">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-green-500/20 to-emerald-500/20 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-white">Conversão</h3>
+                        <ul class="mt-4 space-y-3 text-sm text-slate-200">
+                            <li>• Formulários otimizados para conversão</li>
+                            <li>• Integração com Google Analytics</li>
+                            <li>• Relatórios básicos de performance</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-shell py-14 grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
+            <div class="space-y-6 components-list">
+                <h2 class="text-4xl font-semibold text-white">Componentes diferenciados</h2>
+                <p class="text-slate-200">Widgets exclusivos que elevam a percepção de valor e demonstram domínio técnico.</p>
+                <ul class="space-y-4 text-sm text-slate-200">
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-blue-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span>Design personalizado e exclusivo para sua marca</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-blue-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span>Blog integrado com sistema de gerenciamento de conteúdo</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-blue-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span>SEO avançado e otimização para mecanismos de busca</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <div class="w-6 h-6 rounded-full bg-gradient-to-r from-indigo-400 to-blue-400 flex items-center justify-center flex-shrink-0 mt-1">
+                            <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>
+                        <span>Newsletter e automação básica de e-mail marketing</span>
+                    </li>
+                </ul>
+                <div class="grid gap-6 sm:grid-cols-2 text-sm text-slate-300 pt-4">
+                    <div>
+                        <p class="text-3xl font-semibold text-white">25 dias</p>
+                        <p class="text-slate-400">Prazo de entrega do projeto completo</p>
+                    </div>
+                    <div>
+                        <p class="text-3xl font-semibold text-white">2 anos</p>
+                        <p class="text-slate-400">Hospedagem gratuita incluída</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel overflow-hidden showcase-image">
+                <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=1040&q=80" alt="Profissionais em reunião" class="h-80 w-full object-cover" />
+                <div class="p-8">
+                    <h3 class="text-2xl font-semibold text-white">Pronto para mídia, eventos e campanhas</h3>
+                    <p class="mt-3 text-sm text-slate-200">Estrutura escalável para campanhas pagas, remarketing e materiais ricos.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-shell py-16">
+            <div class="panel p-10">
+                <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr] items-center">
+                    <div>
+                        <span class="badge uppercase text-xs text-indigo-200">Time to value</span>
+                        <h2 class="mt-4 text-4xl font-semibold text-white">Em 4 semanas o plano Prata entrega performance mensurável</h2>
+                        <p class="mt-4 text-slate-200">Inclui treinamento para equipe comercial, scripts de atendimento e revisão mensal de SEO.</p>
+                        <div class="mt-6 flex flex-wrap gap-3 text-xs uppercase tracking-[0.35em] text-indigo-100">
+                            <span class="rounded-full border border-indigo-200/40 px-4 py-2">Analytics</span>
+                            <span class="rounded-full border border-indigo-200/40 px-4 py-2">Copy estratégica</span>
+                            <span class="rounded-full border border-indigo-200/40 px-4 py-2">UX Jurídico</span>
+                        </div>
+                    </div>
+                    <div class="space-y-6 text-sm text-slate-200 testimonials">
+                        <blockquote class="rounded-2xl border border-white/10 p-6 bg-white/[0.02]">
+                            "Com o novo portal, passamos a receber leads já segmentados por área, e o time comercial ganhou tempo valioso."
+                            <footer class="mt-4 text-xs text-slate-400">Cristina Moraes · CMCO, Grupo Projus</footer>
+                        </blockquote>
+                        <blockquote class="rounded-2xl border border-white/10 p-6 bg-white/[0.03]">
+                            "Os relatórios de comportamento nos ajudaram a ajustar nossa pauta e triplicar os acessos orgânicos."
+                            <footer class="mt-4 text-xs text-slate-400">Renato Santos · Sócio, Almeida & Souza</footer>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato" class="container-shell pb-20">
+            <div class="panel p-10">
+                <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] items-center">
+                    <div>
+                        <span class="badge uppercase text-xs text-indigo-200">Workshop estratégico</span>
+                        <h2 class="mt-4 text-4xl font-semibold text-white">Vamos prototipar seu Plano Prata?</h2>
+                        <p class="mt-4 text-slate-200">Sessão guiada de 45 minutos com apresentação de benchmarks e roadmap personalizado.</p>
+                        <ul class="mt-6 space-y-3 text-sm text-slate-200">
+                            <li>• Diagnóstico de funil e oportunidades</li>
+                            <li>• Wireframe navegável em Figma</li>
+                            <li>• Plano de conteúdo inicial (6 meses)</li>
+                        </ul>
+                    </div>
+                    <form class="space-y-4">
+                        <div class="grid gap-4 md:grid-cols-2">
+                            <input type="text" placeholder="Nome completo" class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-indigo-200/70 focus:border-indigo-300 focus:outline-none" />
+                            <input type="email" placeholder="E-mail corporativo" class="rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-indigo-200/70 focus:border-indigo-300 focus:outline-none" />
+                        </div>
+                        <input type="tel" placeholder="Telefone/WhatsApp" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-indigo-200/70 focus:border-indigo-300 focus:outline-none" />
+                        <textarea rows="4" placeholder="Desafios atuais" class="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder-indigo-200/70 focus:border-indigo-300 focus:outline-none"></textarea>
+                        <button type="button" class="w-full rounded-full bg-gradient-to-r from-indigo-400 via-blue-500 to-cyan-400 py-3 text-sm font-semibold text-slate-900 hover:via-blue-400 transition">Marcar workshop</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-white/5 py-8 text-center text-xs text-slate-400">
+        © 2024 Bezerra & Pacheco · Plano Prata apresentado pela equipe digital
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero animations
+            gsap.from('.hero-content', {
+                duration: 1,
+                y: 50,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+
+            gsap.from('.hero-image', {
+                duration: 1,
+                scale: 0.95,
+                opacity: 0,
+                delay: 0.3,
+                ease: 'power3.out'
+            });
+
+            // Journey cards staggered
+            gsap.from('.journey-card', {
+                scrollTrigger: {
+                    trigger: '#journey',
+                    start: 'top 75%'
+                },
+                duration: 0.8,
+                y: 40,
+                opacity: 0,
+                stagger: 0.15,
+                ease: 'power3.out'
+            });
+
+            // Components list
+            gsap.from('.components-list li', {
+                scrollTrigger: {
+                    trigger: '.components-list',
+                    start: 'top 75%'
+                },
+                duration: 0.6,
+                x: -30,
+                opacity: 0,
+                stagger: 0.1,
+                ease: 'power2.out'
+            });
+
+            // Showcase image
+            gsap.from('.showcase-image', {
+                scrollTrigger: {
+                    trigger: '.showcase-image',
+                    start: 'top 80%'
+                },
+                duration: 1,
+                scale: 0.9,
+                opacity: 0,
+                ease: 'power3.out'
+            });
+
+            // Testimonials
+            gsap.from('.testimonials blockquote', {
+                scrollTrigger: {
+                    trigger: '.testimonials',
+                    start: 'top 80%'
+                },
+                duration: 0.8,
+                y: 30,
+                opacity: 0,
+                stagger: 0.2,
+                ease: 'power3.out'
+            });
+        });
+    </script>
+</body>
+</html>
